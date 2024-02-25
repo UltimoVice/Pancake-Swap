@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="../javascript/template/components/navbar.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -29,10 +31,27 @@
                     },
                     traslated: {
                         'transform-3d-0': 'translate3d(0px, 0px, 0px)'
-                    }
+                    },
+                    backgroundImage: theme => ({
+                        'radial-gradient-card-1': 'radial-gradient(112.67% 197.53% at 30.75% 3.72%, rgb(154, 237, 255) 0%, rgb(204, 194, 254) 76.19%, rgb(198, 163, 255) 100%)',
+                        'linear-gradient-card-1': 'linear-gradient(rgba(231, 253, 255, 0.2) 0%, rgba(242, 241, 255, 0.2) 100%)',
+                    }),
                 },
-            }
+            },
+            plugins: [
+                function ({ addUtilities }) {
+                    const newUtilities = {
+                        '.bg-radial-gradient-card-1': {
+                            'background-image': 'var(--bg-radial-gradient)',
+                        },
+                        '.bg-linear-gradient-card-1': {
+                            'background-image': 'var(--bg-linear-gradient)',
+                        },
+                    }
 
+                    addUtilities(newUtilities, ['responsive', 'hover'])
+                },
+            ],
         }
     </script>
     <style>
@@ -263,7 +282,7 @@
                                             class="relative flex items-center text-textViolet text-base font-medium opacity-50 cursor-pointer px-4 h-12 no-underline font-['Kanit', 'sans-serif']">NFT</a>
                                     </div>
                                 </div>
-                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[409px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisibl">
+                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[409px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
                                     <!-- Overview --->
                                     <div>
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-[#666171] cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
@@ -290,6 +309,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- ... --->
                             <div class="py-1">
                                 <div class="">
                                     <div class="relative">
@@ -304,10 +324,71 @@
                                         </a>
                                     </div>
                                 </div>
+                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[469px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
+                                    <!-- Info --->
+                                    <div>
+                                        <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
+                                            <div class="flex items-center">
+                                                Info
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- IFO --->
+                                    <div>
+                                        <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-[#666171] cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
+                                            <div class="flex items-center">
+                                                Activity
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Affiliate Program --->
+                                    <div>
+                                        <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
+                                            <div class="flex items-center">
+                                                Affiliate Program
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- hr --->
+                                    <div>
+                                        <hr class="border-[#383241] border-solid border-t my-1 block overflow-hidden"/>
+                                    </div>
+                                    <!-- Voting --->
+                                    <div>
+                                        <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-[#666171] cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
+                                            <div class="flex items-center">
+                                                Activity
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- hr --->
+                                    <div>
+                                        <hr class="border-[#383241] border-solid border-t my-1 block overflow-hidden"/>
+                                    </div>
+                                    <!-- Blog --->
+                                    <div>
+                                        <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
+                                            <div class="flex items-center">
+                                                Blog
+                                            </div>
+                                            <svg viewBox="0 0 24 24" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg" class="fill-current text-textViolet shrink-0 items-center"><path d="M16.3 8.09014C15.91 8.48014 15.91 9.10014 16.3 9.49014L18.2 11.3901H9C8.45 11.3901 8 11.8401 8 12.3901C8 12.9401 8.45 13.3901 9 13.3901H18.2L16.3 15.2901C15.91 15.6801 15.91 16.3001 16.3 16.6901C16.69 17.0801 17.31 17.0801 17.7 16.6901L21.29 13.1001C21.68 12.7101 21.68 12.0801 21.29 11.6901L17.7 8.09014C17.31 7.70014 16.69 7.70014 16.3 8.09014ZM4 19.3901H11C11.55 19.3901 12 19.8401 12 20.3901C12 20.9401 11.55 21.3901 11 21.3901H4C2.9 21.3901 2 20.4901 2 19.3901V5.39014C2 4.29014 2.9 3.39014 4 3.39014H11C11.55 3.39014 12 3.84014 12 4.39014C12 4.94014 11.55 5.39014 11 5.39014H4V19.3901Z"></path></svg>
+                                        </a>
+                                    </div>
+                                    <!-- Docs --->
+                                    <div>
+                                        <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
+                                            <div class="flex items-center">
+                                                Docs
+                                            </div>
+                                            <svg viewBox="0 0 24 24" color="textSubtle" width="20px" xmlns="http://www.w3.org/2000/svg" class="fill-current text-textViolet shrink-0 items-center"><path d="M16.3 8.09014C15.91 8.48014 15.91 9.10014 16.3 9.49014L18.2 11.3901H9C8.45 11.3901 8 11.8401 8 12.3901C8 12.9401 8.45 13.3901 9 13.3901H18.2L16.3 15.2901C15.91 15.6801 15.91 16.3001 16.3 16.6901C16.69 17.0801 17.31 17.0801 17.7 16.6901L21.29 13.1001C21.68 12.7101 21.68 12.0801 21.29 11.6901L17.7 8.09014C17.31 7.70014 16.69 7.70014 16.3 8.09014ZM4 19.3901H11C11.55 19.3901 12 19.8401 12 20.3901C12 20.9401 11.55 21.3901 11 21.3901H4C2.9 21.3901 2 20.4901 2 19.3901V5.39014C2 4.29014 2.9 3.39014 4 3.39014H11C11.55 3.39014 12 3.84014 12 4.39014C12 4.94014 11.55 5.39014 11 5.39014H4V19.3901Z"></path></svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Nav destra --->
                 <div class="flex items-center h-full">
                     <div class="block mr-3 cursor-pointer">
                         <a href="" class="flex items-center text-textViolet no-underline">
@@ -339,6 +420,7 @@
                             </div>
                         </a>
                     </div>
+                    <!-- Language --->
                     <div class="mt-1 h-6">
                         <div class="relative">
                             <button
@@ -351,8 +433,39 @@
                                     </path>
                                 </svg>
                             </button>
+                            <div class="w-max flex flex-col absolute translate-x-[50%] translate-y-0 left-[50%] bottom-auto bg-[#27262c] p-4 max-h-0 overflow-hidden z-10 rounded opacity-0 will-change-auto pointer-events-none">
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">العربية</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">বাংলা</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">English</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Deutsch</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Ελληνικά</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Español</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Suomalainen</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Filipino</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Français</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">हिंदी</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Magyar</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Bahasa Indonesia</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Italiano</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">日本語</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">한국어</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Nederlands</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Polski</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Português (Brazil)</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Português</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Română</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Русский</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Svenska</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">தமிழ்</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Türkçe</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Українська</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">Tiếng Việt</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">简体中文</button>
+                                <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">繁體中文</button>
+                            </div>
                         </div>
                     </div>
+                    <!-- Settings --->
                     <div class="flex">
                         <button
                             class="p-[2px] w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex h-8 font-semibold leading-4 opacity-100 text-xs bg-transparent shadow mr-2">
@@ -365,6 +478,7 @@
                             </svg>
                         </button>
                     </div>
+                    <!-- Notifications --->
                     <div class="flex">
                         <div
                             class="p-[2px] w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex justify-center tracking-[0.03rem] leading-4 opacity-100 h-8 mr-2 shadow-none ">
@@ -383,7 +497,38 @@
                                 </defs>
                             </svg>
                         </div>
+                        <!-- Notification Pop Up --->
+                        <div class="top-full fixed bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-r-3xl w-full overflow-hidden z-[1001] pointer-events-none h-[520px] invisibl">
+                            <div class="">
+                                <div class="">
+                                    <div class="flex w-[300%] translate-x-0">
+                                        <div class="w-full max-h-[400px]">
+                                            <div class="p-6">
+                                                <div class="pl-10 pb-6 pt-12">
+                                                    <img src="./components/img/welcome-notification-bell.webp" class="text-transparent h-auto max-w-full">
+                                                </div>
+                                                <div class="gap-y-3 flex flex-col justify-center items-center">
+                                                    <div class="text-colorWhite text-2xl font-semibold leading-[120%] text-center">Notifications From PancakeSwap</div>
+                                                    <div class="text-colorsSecondary font-normal leading-6 text-base text-center">Get started with notifications from PancakeSwap. First authorize notifications by signing in your wallet</div>
+                                                    <div class="">
+                                                        <!-- INSERIRE BOTTONE Connect Wallet --->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="bg-transparent items-center flex justify-between pt-3 px-3 w-full">
+                                                <button class="p-[2px] w-12 relative items-center border-0 rounded-r-2xl cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 h-12 bg-transparent text-colorsPrimary shadow-none box-border">
+                                                    <svg viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-colorsPrimary shrink-0 w-5"><path d="M19.43 12.98C19.47 12.66 19.5 12.34 19.5 12C19.5 11.66 19.47 11.34 19.43 11.02L21.54 9.37C21.73 9.22 21.78 8.95 21.66 8.73L19.66 5.27C19.54 5.05 19.27 4.97 19.05 5.05L16.56 6.05C16.04 5.65 15.48 5.32 14.87 5.07L14.49 2.42C14.46 2.18 14.25 2 14 2H9.99996C9.74996 2 9.53996 2.18 9.50996 2.42L9.12996 5.07C8.51996 5.32 7.95996 5.66 7.43996 6.05L4.94996 5.05C4.71996 4.96 4.45996 5.05 4.33996 5.27L2.33996 8.73C2.20996 8.95 2.26996 9.22 2.45996 9.37L4.56996 11.02C4.52996 11.34 4.49996 11.67 4.49996 12C4.49996 12.33 4.52996 12.66 4.56996 12.98L2.45996 14.63C2.26996 14.78 2.21996 15.05 2.33996 15.27L4.33996 18.73C4.45996 18.95 4.72996 19.03 4.94996 18.95L7.43996 17.95C7.95996 18.35 8.51996 18.68 9.12996 18.93L9.50996 21.58C9.53996 21.82 9.74996 22 9.99996 22H14C14.25 22 14.46 21.82 14.49 21.58L14.87 18.93C15.48 18.68 16.04 18.34 16.56 17.95L19.05 18.95C19.28 19.04 19.54 18.95 19.66 18.73L21.66 15.27C21.78 15.05 21.73 14.78 21.54 14.63L19.43 12.98ZM12 15.5C10.07 15.5 8.49996 13.93 8.49996 12C8.49996 10.07 10.07 8.5 12 8.5C13.93 8.5 15.5 10.07 15.5 12C15.5 13.93 13.93 15.5 12 15.5Z"></path></svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Switch Crypto --->
                     <div class="h-full">
                         <div class="flex items-center h-full mr-2">
                             <div
@@ -407,6 +552,80 @@
                                     </path>
                                 </svg>
                             </div>
+                            <!-- Menù a tendina --->
+                            <div class="fixed inset-[0px_auto_auto_0px] translate-x-[1521px] translate-y-[55px] bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 w-[280px] z-[1001] pointer-events-none invisible">
+                                <div class="">
+                                    <div class="py-2 px-4 ">
+                                        <div class="text-textViolet font-normal leading-6 text-base">
+                                            Select a Network
+                                        </div>
+                                    </div>
+                                    <hr class="border-[#383241] border-solid border-t-[1px] my-1"/>
+                                    <!-- BNB Chains --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/56.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            BNB Chains
+                                        </div>
+                                    </button>
+                                    <!-- Ethereum --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/1.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            Ethereum
+                                        </div>
+                                    </button>
+                                    <!-- Polygon zkEVM --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/1101.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            Polygon zkEVM
+                                        </div>
+                                    </button>
+                                    <!-- zkSync Era --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/324.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            zkSync Era
+                                        </div>
+                                    </button>
+                                    <!-- Arbitrum One --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/42161.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            Arbitrum One
+                                        </div>
+                                    </button>
+                                    <!-- Linea --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/59144.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            Linea
+                                        </div>
+                                    </button>
+                                    <!-- Base --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/8453.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            Base
+                                        </div>
+                                    </button>
+                                    <!-- opBNB --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://assets.pancakeswap.finance/web/chains/56.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            opBNB
+                                        </div>
+                                    </button>
+                                    <!-- Aptos --->
+                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                        <img src="https://aptos.pancakeswap.finance/images/apt.png" class="text-transparent max-h-6 h-auto max-w-full"/>
+                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                            Aptos
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <button
@@ -426,8 +645,70 @@
         <div class="pt-0 -mt-8 mb-[30px] relative max-w-full box-border">
             <div
                 class="relative overflow-visible opacity-0 animate-[placeholder] touch-pan-y ml-auto mr-auto list-none p-0 z-[1] block">
-                <div class="relative w-full h-full z-[1] flex transition-transform">
-                    <div class="p-5 h-auto w-[1168px] opacity-0 overflow-visible">
+                <div class="relative w-full h-full z-[1] flex transition-transform box-content">
+                    <!-- Prima Card Banner --->
+                    <div class="p-5 h-auto w-[1168px] opacity-0 overflow-visible pointer-events-none transition-opacity shrink-0 relative block">
+                        <div class="max-w-[1128px] rounded-[32px] h-48 bg-radial-gradient-card-1 bg-linear-gradient-card-1 gap-0 flex flex-row justify-between">
+                            <!-- Sinistra Prima Card Banner --->
+                            <div class="flex-1 py-4 pl-6 gap-[6px] flex flex-col justify-between">
+                                <div class="w-full gap-y-3 flex flex-col justify-start">
+                                    <div class="w-full gap-2 flex flex-row justify-start items-center">
+                                        <div class="gap-1 flex flex-row items-center">
+                                            <span class="box-border inline-block overflow-hidden w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 relative max-w-full">
+                                                <span class="box-border block w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 max-w-full">
+                                                    <img src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2720%27%20height=%2720%27/%3e" class="block max-w-full w-auto h-auto bg-none opacity-100 border-0 m-0 p-0">
+                                                </span>
+                                                <img src="https://assets.pancakeswap.finance/web/banners/pancakeswap-logo.png" class="absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"/>
+                                            </span>
+                                            <div class="text-[#090909] font-semibold text-base leading-5">
+                                                PancakeSwap
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full gap-[6px] flex flex-col justify-start">
+                                        <div class="text-lg leading-[30px] text-[#7645D9] font-extrabold" style="text-shadow: -2px 2px 0 rgb(255 255 255), 2px 2px 0 rgb(255 255 255), 2px -2px 0 rgb(255 255 255), -2px -2px 0 rgb(255 255 255);">
+                                            Be Our Top 100 Traders and Earn a 3% Trading Fee Rebate!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full flex flex-row justify-start items-center">
+                                    <a href="" class="py-1 flex font-semibold items-center w-fit text-[#7645D9] leading-6 text-base no-underline">
+                                        <div class="text-[#7645D9] font-semibold text-[14px] leading-4">
+                                            Join Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" color="#7645D9" ml="4px" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#7645D9] shrink-0 ml-1"><path d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Destra Prima Card Banner --->
+                            <div class="relative flex-1 flex">
+                                <div class="absolute w-full left-0 bottom-0 h-[122%] overflow-hidden rounded-b-[32px]">
+                                    <div class="bg-url('https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png') w-[468px] h-56 bg-cover"></div>
+                                    <div class="left-[10%] top-0 absolute animate__animated animate__ease-in-out animate__infinite">
+                                        <div class="w-[85px] h-[74px] bg-url('https://assets.pancakeswap.finance/web/banners/top-traders/floating-item.png') bg-cover"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Seconda Card Banner --->
+                    <div class="">
+
+                    </div>
+                    <!-- Terza Card Banner --->
+                    <div class="">
+
+                    </div>
+                    <!-- Quarta Card Banner --->
+                    <div class="">
+
+                    </div>
+                    <!-- Quinta Card Banner --->
+                    <div class="">
+
+                    </div>
+                    <!-- Sesta Card Banner --->
+                    <div class="">
 
                     </div>
                 </div>
