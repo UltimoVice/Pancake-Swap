@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="../javascript/template/components/navbar.js"></script>
+    <script src="./components/navbar.js" defer="defer"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -104,16 +104,16 @@
                     <div class="block">
                         <div class="flex ml-6">
                             <!-- Trade --->
-                            <div class="py-1">
-                                <div class="">
+                            <div id="trade" class="py-1">
+                                <div id="tradeBgNav" class="">
                                     <div class="relative">
                                         <a href=""
                                             class="relative flex items-center text-textViolet text-base font-medium opacity-100 cursor-pointer px-4 h-12 no-underline font-['Kanit', 'sans-serif']">Trade</a>
                                     </div>
                                 </div>
-                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[200px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
+                                <div id="tradeMenu" class="fixed inset-[0px_auto_auto_0px] translate-x-[200px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
                                     <!-- Swap --->
-                                    <div>
+                                    <div id="swap" class="rounded-t-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Swap
@@ -121,7 +121,7 @@
                                         </a>
                                     </div>
                                     <!-- Liquidity --->
-                                    <div>
+                                    <div id="liquidity">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Liquidity
@@ -129,7 +129,7 @@
                                         </a>
                                     </div>
                                     <!-- Perpetual --->
-                                    <div>
+                                    <div id="perpetual">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Perpetual
@@ -138,7 +138,7 @@
                                         </a>
                                     </div>
                                     <!-- Bridge --->
-                                    <div>
+                                    <div id="bridge">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Bridge
@@ -155,7 +155,7 @@
                                         </a>
                                     </div>
                                     <!-- Buy Crypto --->
-                                    <div>
+                                    <div id="buy">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Buy Crypto
@@ -163,7 +163,7 @@
                                         </a>
                                     </div>
                                     <!-- Trading Rewards --->
-                                    <div>
+                                    <div id="trading" class="rounded-b-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Trading Rewards
@@ -173,16 +173,16 @@
                                 </div>
                             </div>
                             <!-- Earn --->
-                            <div class="py-1">
-                                <div class="">
+                            <div id="earn" class="py-1">
+                                <div id="earnBgNav"  class="">
                                     <div class="relative">
                                         <a href=""
                                             class="relative flex items-center text-textViolet text-base font-medium opacity-100 cursor-pointer px-4 h-12 no-underline">Earn</a>
                                     </div>
                                 </div>
-                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[272px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
+                                <div id="earnMenu" class="fixed inset-[0px_auto_auto_0px] translate-x-[272px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
                                     <!-- Farms --->
-                                    <div>
+                                    <div id="farms" class="rounded-t-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Farms
@@ -198,7 +198,7 @@
                                         </a>
                                     </div>
                                     <!-- Pools --->
-                                    <div>
+                                    <div id="pools">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Pools
@@ -206,7 +206,7 @@
                                         </a>
                                     </div>
                                     <!-- Position Manager --->
-                                    <div>
+                                    <div id="positionManager">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Position Manager
@@ -232,16 +232,16 @@
                                 </div>
                             </div>
                             <!-- Game --->
-                            <div class="py-1">
-                                <div class="">
+                            <div id="game" class="py-1">
+                                <div id="gameBgNav"  class="">
                                     <div class="relative">
                                         <a href=""
                                             class="relative flex items-center text-textViolet text-base font-medium opacity-100 cursor-pointer px-4 h-12 no-underline font-['Kanit', 'sans-serif']">Game</a>
                                     </div>
                                 </div>
-                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[336px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
+                                <div id="gameMenu" class="fixed inset-[0px_auto_auto_0px] translate-x-[336px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
                                     <!-- Gaming Marketplace --->
-                                    <div>
+                                    <div id="gamingMarketplace" class="rounded-t-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Gaming Marketplace
@@ -250,7 +250,7 @@
                                         </a>
                                     </div>
                                     <!-- Prediction (BETA) --->
-                                    <div>
+                                    <div id="prediction">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Prediction (BETA)
@@ -258,7 +258,7 @@
                                         </a>
                                     </div>
                                     <!-- Lottery --->
-                                    <div>
+                                    <div id="lottery">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Lottery
@@ -266,7 +266,7 @@
                                         </a>
                                     </div>
                                     <!-- Pottery (BETA) --->
-                                    <div>
+                                    <div id="pottery" class="rounded-b-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Pottery (BETA)
@@ -276,14 +276,14 @@
                                 </div>
                             </div>
                             <!-- NFT --->
-                            <div class="py-1">
+                            <div id="NFT" class="py-1">
                                 <div class="">
-                                    <div class="relative">
+                                    <div id="bgNav" class="relative">
                                         <a href=""
                                             class="relative flex items-center text-textViolet text-base font-medium opacity-50 cursor-pointer px-4 h-12 no-underline font-['Kanit', 'sans-serif']">NFT</a>
                                     </div>
                                 </div>
-                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[409px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
+                                <div id="NFTMenu" class="fixed inset-[0px_auto_auto_0px] translate-x-[409px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
                                     <!-- Overview --->
                                     <div>
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-[#666171] cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
@@ -311,8 +311,8 @@
                                 </div>
                             </div>
                             <!-- ... --->
-                            <div class="py-1">
-                                <div class="">
+                            <div id="threeDot" class="py-1">
+                                <div id="threeBgNav" class="">
                                     <div class="relative">
                                         <a href=""
                                             class="relative flex items-center text-textViolet text-base font-medium opacity-100 cursor-pointer px-4 h-12 no-underline font-['Kanit', 'sans-serif']"><svg
@@ -325,9 +325,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="fixed inset-[0px_auto_auto_0px] translate-x-[469px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
+                                <div id="threeDotMenu" class="fixed inset-[0px_auto_auto_0px] translate-x-[469px] translate-y-14 bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 mb-0 w-[280px] z-[1001] pointer-events-none invisible">
                                     <!-- Info --->
-                                    <div>
+                                    <div id="info" class="rounded-t-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Info
@@ -338,12 +338,12 @@
                                     <div>
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-[#666171] cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
-                                                Activity
+                                                IFO
                                             </div>
                                         </a>
                                     </div>
                                     <!-- Affiliate Program --->
-                                    <div>
+                                    <div id="affiliateProgram">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Affiliate Program
@@ -367,7 +367,7 @@
                                         <hr class="border-[#383241] border-solid border-t my-1 block overflow-hidden"/>
                                     </div>
                                     <!-- Blog --->
-                                    <div>
+                                    <div id="blog">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Blog
@@ -376,7 +376,7 @@
                                         </a>
                                     </div>
                                     <!-- Docs --->
-                                    <div>
+                                    <div id="docs" class="rounded-b-lg">
                                         <a class="rounded-t-lg rounded-tr-lg items-center border-0 bg-transparent text-textViolet cursor-pointer font-normal flex text-base h-12 justify-between outline-none px-4 w-full pointer-events-inherit">
                                             <div class="flex items-center">
                                                 Docs
@@ -422,7 +422,7 @@
                         </a>
                     </div>
                     <!-- Language --->
-                    <div class="mt-1 h-6">
+                    <div id="languageSVG" class="mt-1 h-6">
                         <div class="relative">
                             <button
                                 class="relative items-center border-0 rounded-2xl cursor-pointer inline-flex h-5 font-semibold leading-4 opacity-100 text-xs px-2 bg-transparent shadow">
@@ -434,7 +434,7 @@
                                     </path>
                                 </svg>
                             </button>
-                            <div class="w-max flex flex-col absolute translate-x-[50%] translate-y-0 left-[50%] bottom-auto bg-[#27262c] p-4 max-h-0 overflow-hidden z-10 rounded opacity-0 will-change-auto pointer-events-none">
+                            <div id="languageButton" class="w-max flex flex-col absolute transform -translate-x-1/2 left-[50%] bottom-auto bg-[#27262c] p-4 max-h-[400px] overflow-hidden z-10 rounded opacity-0 will-change-auto pointer-events-none">
                                 <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">العربية</button>
                                 <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">বাংলা</button>
                                 <button class="min-h-8 h-auto text-colorWhite px-2 rounded-lg relative items-center border-0 cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 bg-transparent shadow-none appearance-auto box-border text-center py-[1px] pointer-events-none">English</button>
