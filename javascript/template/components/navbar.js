@@ -69,7 +69,7 @@ const menuItems = [
     { id: '#info', show: toggleBgMenu, hide: toggleBgMenu },
     { id: '#affiliateProgram', show: toggleBgMenu, hide: toggleBgMenu },
     { id: '#blog', show: toggleBgMenu, hide: toggleBgMenu },
-    { id: '#docs ', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#docs', show: toggleBgMenu, hide: toggleBgMenu },
 ];
 
 // Assegna gli eventi a ciascun elemento del menu
@@ -99,3 +99,54 @@ const addLanguageHoverListeners = (elementId, menuId) => {
 };
 
 addLanguageHoverListeners('languageSVG', '#languageButton');
+
+
+// Cambia colore bottoni lingue
+const colorLanguage = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('text-[#A9A5B2]'); 
+    menu.classList.toggle('text-colorWhite'); 
+    menu.classList.toggle('pointer-events-auto');
+    menu.classList.toggle('cursor-pointer');
+};
+
+const languageItems = [
+    { id: '#lingua1', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua3', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua4', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua5', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua6', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua7', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua8', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua9', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua10', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua11', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua12', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua13', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua14', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua15', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua16', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua17', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua18', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua19', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua20', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua21', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua22', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua23', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua24', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua25', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua26', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua27', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua28', show: colorLanguage, hide: colorLanguage },
+];
+
+
+languageItems.forEach(item => {
+    const { id, show, hide } = item;
+    const languageItem = document.querySelector(id);
+    languageItem.addEventListener('mouseover', show.bind(null, id));
+    languageItem.addEventListener('mouseout', hide.bind(null, id));
+});
+
+
