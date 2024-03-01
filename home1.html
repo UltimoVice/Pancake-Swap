@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Pancake Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // azzurrino
+                        'colorsPrimary': '#1fc7d4',
+                        // violetto
+                        'colorsSecondary': '#a881fc',
+                        // verdino
+                        'colorsTertiary': '#badd2',
+                        'colorWhite': '#f4eeff',
+                        'bgColor': '#08060b',
+                        'textViolet': '#b8add2',
+                    }
+                },
+                fontFamily: {
+                    '*': ['Kanit', 'sans-serif']
+                }
+            }
+
+        }
+    </script>
+    <style>
+        * {
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<!-- body da far notare le classi aggiunte -->
+
+<body class="bg-bgColor w-screen overflow-x-hidden">
+    <!-- marcello part - navbar  -->
+
+    <!-- prima parte -->
+    <div class="w-full h-fit bg-gradient-to-r from-[#21193a] to-[#191326] ">
+        <div class="w-full relative z-[1] py-12 flex flex-col items-center">
+            <div class="w-full max-w-[1200px] p-4 overflow-visible min-h-[auto]">
+                <!-- marcello banner -->
+                <div class="h-[192px] w-[1128px] self-center bg-[colorPrimay] z-10">
+                </div>
+                <!-- contenuto -->
+                <div class="w-full h-full flex max-w-[1200px] max-h-[640px] justify-center items-center ">
+                    <div class="flex flex-1 flex-col min-w-[560px] pl-7"><!-- sx -->
+                        <div class="leading-6 mr-4 pr-[10px] text-left text-base block mb-4">
+                            <div class="text-colorWhite text-[88px] font-semibold mr-2 leading-[110%] inline-block">
+                                Everyone's</div>
+                            <div
+                                class="text-colorsSecondary text-[88px] font-semibold mr-2 leading-[110%] inline-block">
+                                Favorite</div>
+                            <div class="text-colorWhite text-[88px] font-semibold mr-2 leading-[110%] inline-block">
+                                DEX</div>
+                        </div>
+                        <div
+                            class="text-textViolet text-[24px] font-semibold leading-[110%] mb-6 text-left max-w-[600px] block">
+                            Trade, earn, and own crypto on the all-in-one multichain DEX
+                        </div>
+                        <!-- button non mi funge il bold-->
+                        <div class="flex">
+                            <button id="connectWallet"
+                                class="mr-2 text-[#191326] text-base font-normal bg-colorsPrimary border-colorsPrimary border-solid border rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">Connect
+                                Wallet </button>
+                            <a class="" href="">
+                                <button
+                                    class="text-colorsPrimary text-base font-normal border-colorsPrimary border-solid border mr-1 rounded-2xl h-12 px-6 fill-current  flex items-center justify-center ">Trade
+                                    Now</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-1 mb-0 h-fit w-fit bottom-[-175px] relative"> <!-- dx -->
+                        <div class="w-full block">
+                            <div class="h-[736px] w-[605px] mb-[100px] mr-[100px] overflow-hidden relative">
+                                <canvas width="1080" height="1080"
+                                    class="bg-transparent scale-[0.7] overflow-clip translate-x-1/2 translate-y-1/2 absolute"></canvas>
+                                <div class="w-full">
+                                    <video width="1080" autoplay loop playsinline preload="auto"
+                                        class="object-fit align-baseline m-0 p-0 border-0 overflow-clip bg-transparent absolute"><!-- da impostare bg color -->
+                                        <source src="https://assets.pancakeswap.finance/web/landing/bunnyv2.webm"
+                                            type="video/webm" class="box-border">
+                                    </video>
+                                    <video width="1080" autoplay loop playsinline preload="auto"
+                                        class="object-fit align-baseline m-0 p-0 border-0 overflow-clip bg-transparent absolute">
+                                        <source src="https://assets.pancakeswap.finance/web/landing/star.webm"
+                                            type="video/webm" class="box-border">
+                                    </video>
+                                    <video width="1080" autoplay loop playsinline preload="auto"
+                                        class="object-fit align-baseline m-0 p-0 border-0 overflow-clip bg-transparent absolute">
+                                        <source src="https://assets.pancakeswap.finance/web/landing/hero-cake.webm"
+                                            type="video/webm" class="box-border">
+                                    </video>
+                                    <video width="1080" autoplay loop playsinline preload="auto"
+                                        class="object-fit align-baseline m-0 p-0 border-0 overflow-clip bg-transparent absolute">
+                                        <source src="https://assets.pancakeswap.finance/web/landing/rock01.webm"
+                                            type="video/webm" class="box-border">
+                                    </video>
+                                    <video width="1080" autoplay loop playsinline preload="auto"
+                                        class="object-fit align-baseline m-0 p-0 border-0 overflow-clip bg-transparent absolute">
+                                        <source src="https://assets.pancakeswap.finance/web/landing/rock02.webm"
+                                            type="video/webm" class="box-border">
+                                    </video>
+                                    <video width="1080" autoplay loop playsinline preload="auto"
+                                        class="object-fit align-baseline m-0 p-0 border-0 overflow-clip bg-transparent absolute">
+                                        <source src="https://assets.pancakeswap.finance/web/landing/rock03.webm"
+                                            type="video/webm" class="box-border">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- background svg-->
+                <div class=" w-screen h-full bottom-[-3px] align-bottom block absolute inset-0">
+                    <svg viewBox="0 0 1660 339" class="w-screen self-center slide-svg-dark absolute inset-x-0 bottom-0"
+                        width="100%" color="text" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M804 166.523C520.5 166.523 267.5 290.022 0 304V338.5H1660V0C1358.83 0 1104 166.523 804 166.523Z"
+                            fill="url(#paint0_linear_dark)"></path>
+                        <defs>
+                            <linearGradient id="paint0_linear_dark" x1="830" y1="83.5" x2="830" y2="338.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#08060B" stop-opacity="0.2"></stop>
+                                <stop offset="0.545554" stop-color="#08060B" stop-opacity="0.5"></stop>
+                                <stop offset="1" stop-color="#08060B"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <svg viewBox="0 0 1660 339"
+                        class="w-screen self-center slide-svg-light invisible absolute inset-x-0 bottom-0" width="100%"
+                        color="text" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M804 167.023C520.5 167.023 267.5 290.522 0 304.5V339H1660V0.5C1358.83 0.5 1104 167.023 804 167.023Z"
+                            fill="url(#paint0_linear_light)"></path>
+                        <defs>
+                            <linearGradient id="paint0_linear_light" x1="830" y1="84" x2="830" y2="339"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" stop-opacity="0.48"></stop>
+                                <stop offset="0.566389" stop-color="white" stop-opacity="0.35"></stop>
+                                <stop offset="1" stop-color="white"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- seconda parte -->
+    <div class="w-full h-[496px] flex justify-center items-center bg-gradient-to-b from-[#09070c] to-[#201335] ">
+        <div class="w-[800px]">
+            <!-- due div di titolo -->
+            <div class="w-full text-colorWhite text-[32px] font-semibold leading-[110%] mb-[8px] text-center">
+                Shaping the Future of Decentralized Trading:
+            </div>
+            <div class="w-full text-colorWhite text-[32px] font-semibold leading-[110%] mb-[48px] text-center">
+                PancakeSwap’s Unstoppable Expansion
+            </div>
+            <!-- div testi -->
+            <div class="w-full flex justify-between mb-12">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="text-colorWhite text-[24px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        Total Users:
+                    </div>
+                    <div
+                        class="text-colorsSecondary text-[44px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        1,301,278
+                    </div>
+                    <div
+                        class="text-textViolet text-[19px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        in the last 30 days
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="text-colorWhite text-[24px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        Total Trades:
+                    </div>
+                    <div
+                        class="text-colorsSecondary text-[44px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        16,523,622
+                    </div>
+                    <div
+                        class="text-textViolet text-[19px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        in the last 30 days
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="text-colorWhite text-[24px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        Total Value Locked:
+                    </div>
+                    <div
+                        class="text-colorsSecondary text-[44px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        $1,647,903,193
+                    </div>
+                    <div
+                        class="text-textViolet text-[19px] font-semibold leading-[110%] mb-0 text-center min-w-fit block">
+                        in the last 30 days
+                    </div>
+                </div>
+            </div>
+
+            <!-- infinity orizzontale  -->
+            <div class="relative">
+                <div class="flex gap-3">
+                    <!-- 1 -->
+                    <div class="bg-[#f0b90b] dark:bg-1i  text-black block h-[46px] w-fit rounded-[25px] p-3 px-4">
+                        <div width="26px" class="float-start mr-1">
+                            <svg viewBox="0 0 40 40" color="text" width="20px" xmlns="http://www.w3.org/2000/svg"
+                                class="">
+                                <path fill="black"
+                                    d="M14.2487 9.59637L10.7888 7.58546L20.1999 2.08337L29.6387 7.58546L26.1787 9.59637L20.1999 6.13313L14.2487 9.59637ZM32.1022 13.0596V17.1094L35.5622 15.0985V11.0487L32.1022 9.00986L28.6422 11.0208L32.1022 13.0596ZM16.7399 11.0487L20.1999 13.0596L23.6599 11.0487L20.1999 9.00986L16.7399 11.0487ZM29.6387 14.5119L26.1787 12.501L20.1999 15.9643L14.2487 12.501L10.7888 14.5119V18.5617L16.7399 22.0249V28.9514L20.1999 30.9623L23.6599 28.9514V22.0249L29.6387 18.5617V14.5119ZM32.1022 26.9405L26.1511 30.4038V34.4535L35.5899 28.9514V17.9752L32.1022 20.014V26.9405ZM26.1511 27.527L29.611 25.5161V21.4384L26.1511 23.4493V27.527ZM16.7399 31.8561V35.9058L20.1999 37.9168L23.6599 35.9058V31.8561L20.1999 33.867L16.7399 31.8561ZM4.80992 15.0985L8.2699 17.1094V13.0596L11.7299 11.0487L8.29758 9.00986L4.8376 11.0208V15.0985H4.80992ZM8.29758 20.014L4.8376 18.0031V28.9794L14.2764 34.4814V30.4317L8.29758 26.9405V20.014ZM14.2487 23.4773L10.7888 21.4664V25.5161L14.2487 27.527V23.4773Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="float-end">BNB Chain</div>
+                    </div>
+                    <!-- 2 -->
+                    <div
+                        class="bg-[#333333] dark:bg-[]  text-[#f0b90b] dark:text-[] block h-[46px] w-fit rounded-[25px] p-3 px-4">
+                        <div width="26px" class="float-start mr-1">
+                            <svg viewBox="0 0 40 40" color="invertedContrast" width="26px"
+                                xmlns="http://www.w3.org/2000/svg" class="">
+                                <path fill="#F1BA0D"
+                                    d="M14.2487 9.59637L10.7888 7.58546L20.1999 2.08337L29.6387 7.58546L26.1787 9.59637L20.1999 6.13313L14.2487 9.59637ZM32.1022 13.0596V17.1094L35.5622 15.0985V11.0487L32.1022 9.00986L28.6422 11.0208L32.1022 13.0596ZM16.7399 11.0487L20.1999 13.0596L23.6599 11.0487L20.1999 9.00986L16.7399 11.0487ZM29.6387 14.5119L26.1787 12.501L20.1999 15.9643L14.2487 12.501L10.7888 14.5119V18.5617L16.7399 22.0249V28.9514L20.1999 30.9623L23.6599 28.9514V22.0249L29.6387 18.5617V14.5119ZM32.1022 26.9405L26.1511 30.4038V34.4535L35.5899 28.9514V17.9752L32.1022 20.014V26.9405ZM26.1511 27.527L29.611 25.5161V21.4384L26.1511 23.4493V27.527ZM16.7399 31.8561V35.9058L20.1999 37.9168L23.6599 35.9058V31.8561L20.1999 33.867L16.7399 31.8561ZM4.80992 15.0985L8.2699 17.1094V13.0596L11.7299 11.0487L8.29758 9.00986L4.8376 11.0208V15.0985H4.80992ZM8.29758 20.014L4.8376 18.0031V28.9794L14.2764 34.4814V30.4317L8.29758 26.9405V20.014ZM14.2487 23.4773L10.7888 21.4664V25.5161L14.2487 27.527V23.4773Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="float-end">opBNB Chain</div>
+                    </div>
+                    <!-- 3 -->
+                    <div class="bg-[#17ba92] dark:bg-[]  text-black block h-[46px] w-fit rounded-[25px] p-3 px-4">
+                        <div width="26px" class="float-start mr-1">
+                            <svg viewBox="0 0 60 60" width="22px" color="invertedContrast"
+                                xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ hxxPRP">
+                                <path
+                                    d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="float-end">Aptos</div>
+                    </div>
+                    <!-- 4 -->
+                    <div class="bg-[#627ad8] dark:bg-[]  text-black block h-[46px] w-fit rounded-[25px] p-3 px-4">
+                        <div width="26px" class="float-start mr-1">
+                            <svg viewBox="0 0 10 14" width="16px" color="invertedContrast"
+                                xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ hxxPRP">
+                                <path d="M4.99103 0.174805V5.13368L9.18211 7.00671L4.99103 0.174805Z"
+                                    fill-opacity="0.602"></path>
+                                <path d="M4.99083 0.174805L0.799744 7.00671L4.99083 5.13368V0.174805Z"></path>
+                                <path d="M4.99103 10.2201V13.5896L9.18456 7.78711L4.99103 10.2201Z"
+                                    fill-opacity="0.602"></path>
+                                <path d="M4.99083 13.5896V10.2201L0.799744 7.78711L4.99083 13.5896Z"></path>
+                                <path d="M4.99103 9.4398L9.18211 7.00682L4.99103 5.13379V9.4398Z" fill-opacity="0.2">
+                                </path>
+                                <path d="M0.799744 7.00682L4.99083 9.4398V5.13379L0.799744 7.00682Z"
+                                    fill-opacity="0.602"></path>
+                            </svg>
+                        </div>
+                        <div class="float-end">Ethereum</div>
+                    </div>
+                     <!-- 5 -->
+                     <div class="bg-[#17ba92] dark:bg-[]  text-black block h-[46px] w-fit rounded-[25px] p-3 px-4">
+                        <div width="26px" class="float-start mr-1">
+                            <svg viewBox="0 0 60 60" width="22px" color="invertedContrast"
+                                xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ hxxPRP">
+                                <path
+                                    d="M46.47 20.07h-5.31a2.15 2.15 0 01-1.61-.72l-2.16-2.42a1.69 1.69 0 00-2.53 0L33 19a3.21 3.21 0 01-2.39 1.07h-29A30.26 30.26 0 000 27.48h27.42a1.78 1.78 0 001.28-.54l2.56-2.66a1.67 1.67 0 011.22-.52h.1a1.7 1.7 0 011.27.57L36 26.75a2.17 2.17 0 001.61.73H60a30.26 30.26 0 00-1.58-7.41h-12zM16.6 43.05a1.78 1.78 0 001.27-.54l2.56-2.66a1.7 1.7 0 011.22-.52h.1a1.7 1.7 0 011.25.57l2.15 2.42a2.14 2.14 0 001.62.73h30.35a29.73 29.73 0 002.47-7.48H30.47a2.17 2.17 0 01-1.62-.72l-2.15-2.43a1.69 1.69 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H.41a29.73 29.73 0 002.47 7.48zM38.12 12a1.74 1.74 0 001.27-.54L42 8.78a1.69 1.69 0 011.22-.51h.1a1.69 1.69 0 011.27.56l2.15 2.43a2.17 2.17 0 001.62.72h5.77A30.19 30.19 0 005.92 12zM26.53 50.46h-7.89a2.17 2.17 0 01-1.64-.72l-2.15-2.43a1.71 1.71 0 00-2.53 0l-1.85 2.08a3.18 3.18 0 01-2.38 1.07H8a30.16 30.16 0 0044 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="float-end">Aptos</div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- svg di sfondo -->
+            <div class="w-screen h-fit box-border inset-x-0 block bottom-[-400px] absolute">
+                <div class="h-fit w-fit bottom-[325px] left-[20px] absolute"><span
+                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                alt="" aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27144%27%20height=%27168%27/%3e"
+                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+                            alt="bnbBallRocket" src="https://assets.pancakeswap.finance/web/landing/bnb-ball-rocket.png"
+                            decoding="async" data-nimg="intrinsic"
+                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                </div>
+                <div class="h-fit w-fit bottom-[370px] right-[-0px] absolute"><span
+                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                alt="" aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27116%27%20height=%27230%27/%3e"
+                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+                            alt="ethBallRocket" src="https://assets.pancakeswap.finance/web/landing/eth-ball-rocket.png"
+                            decoding="async" data-nimg="intrinsic"
+                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                </div>
+                <div class="h-fit w-fit bottom-[500px] right-[119px] absolute"><span
+                        style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
+                            style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
+                                alt="" aria-hidden="true"
+                                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2784%27%20height=%27101%27/%3e"
+                                style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img
+                            alt="aptosBallRocket"
+                            src="https://assets.pancakeswap.finance/web/landing/aptos-ball-rocket.png" decoding="async"
+                            data-nimg="intrinsic"
+                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>
