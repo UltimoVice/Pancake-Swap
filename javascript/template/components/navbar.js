@@ -19,6 +19,9 @@ addMenuHoverListeners('game', '#gameMenu');
 addMenuHoverListeners('NFT', '#NFTMenu');
 addMenuHoverListeners('threeDot', '#threeDotMenu');
 
+addMenuHoverListeners('cryptoSel', '#cryptoMenu');
+
+
 // Mostra riquadro violetto Nav
 const toggleMenuChangeColor = (id) => {
     const menu = document.querySelector(id);
@@ -70,6 +73,15 @@ const menuItems = [
     { id: '#affiliateProgram', show: toggleBgMenu, hide: toggleBgMenu },
     { id: '#blog', show: toggleBgMenu, hide: toggleBgMenu },
     { id: '#docs', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#bnbChains', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#ethereum', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#polygon', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#zkSync', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#arbitrum', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#linea', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#base', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#opBNB', show: toggleBgMenu, hide: toggleBgMenu },
+    { id: '#aptos', show: toggleBgMenu, hide: toggleBgMenu },
 ];
 
 // Assegna gli eventi a ciascun elemento del menu
@@ -148,5 +160,57 @@ languageItems.forEach(item => {
     languageItem.addEventListener('mouseover', show.bind(null, id));
     languageItem.addEventListener('mouseout', hide.bind(null, id));
 });
+
+// Mostra e nascondi finestra settings
+const toggleSettings = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('visible');
+    menu.classList.toggle('invisible');
+};
+
+const addSettingsClick = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleMenu(menuId));
+};
+
+addSettingsClick('openSettings', '#windowSettings');
+addSettingsClick('closeSettings', '#windowSettings');
+addSettingsClick('closeBgSettings', '#windowSettings');
+
+
+// Mostra e nascondi finestra notifications
+const toggleNotification = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('visible');
+    menu.classList.toggle('invisible');
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('pointer-events-auto');
+};
+
+const addNotificationClick = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleMenu(menuId));
+};
+
+addNotificationClick('toggleNotification', '#windowNotification');
+
+
+// Cambio colore Change Crypto
+const toggleCrypto = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('text-[#ACA8B5]');
+    menu.classList.toggle('text-colorWhite');
+};
+
+const addCryptoHover = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('mouseover', () => toggleCrypto(menuId));
+    element.addEventListener('mouseout', () => toggleCrypto(menuId));
+};
+
+addCryptoHover('cryptoSel', '#topCrypto');
+addCryptoHover('cryptoSel', '#svgCrypto');
+addCryptoHover('cryptoSel', '#imgCrypto');
+
 
 

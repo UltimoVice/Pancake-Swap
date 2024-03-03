@@ -37,6 +37,15 @@
                         'linear-gradient-card-1': 'linear-gradient(rgba(231, 253, 255, 0.2) 0%, rgba(242, 241, 255, 0.2) 100%)',
                         'radial-gradient-main': 'radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%)',
                     }),
+                    overflow: {
+                        'overlay': 'overlay',
+                    },
+                    boxShadow: {
+                        'settingsBox': 'rgba(14, 14, 44, 0.1) 0px 20px 36px -8px, rgba(0, 0, 0, 0.05) 0px 1px 1px',
+                        'settingsSwitch': '0px 0px 0px 1px #7645d9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)',
+                        'shadowInset': 'inset 0px 2px 2px -1px rgba(74, 74, 104, .1)',
+                        'focusActive': '0px 0px 0px 1px #7645d9, 0px 0px 0px 4px rgba(118, 69, 217, .6)',
+                    },
                 },
             },
             plugins: [
@@ -72,7 +81,7 @@
     </style>
 </head>
 
-<body class="bg-[#08060b] box-border font-display antialiased overflow-y-auto custom-scrollbar">
+<body class="bg-[#08060b] box-border font-display antialiased overflow-y-auto custom-scrollbar overlay overflow-x-hidden">
     <div class="h-14 fixed w-full z-20 top-0 left-0 bg-[#27262c]">
         <div>
             <nav
@@ -95,7 +104,7 @@
                                 <path
                                     d="M97.696 177.755c-41.118 0-86.372-22.235-86.443-51.018v.134c0 35.632 30.395 62.491 86.443 62.491s86.443-26.859 86.443-62.491v-.134c-.071 28.783-45.325 51.018-86.443 51.018z"
                                     fill="#FEDC90"></path>
-                                <path class="eye"
+                                <path class="eye delay-[20ms]"
                                     d="M74.85 117.896c0 9.718-4.546 14.779-10.154 14.779s-10.154-5.061-10.154-14.779 4.546-14.779 10.154-14.779 10.154 5.061 10.154 14.779zM140.851 117.896c0 9.718-4.546 14.779-10.154 14.779s-10.154-5.061-10.154-14.779 4.546-14.779 10.154-14.779 10.154 5.061 10.154 14.779z"
                                     fill="#633001"></path>
                             </svg>
@@ -394,7 +403,7 @@
                     <div class="block mr-3 cursor-pointer">
                         <a href="" class="flex items-center text-textViolet no-underline">
                             <svg viewBox="0 0 96 96" width="24px" mr="8px" color="text"
-                                xmlns="http://www.w3.org/2000/svg" class="self-center shrink-0 mr-2">
+                                xmlns="http://www.w3.org/2000/svg" class="self-center shrink-0 mr-2 transition-transform duration-300 ease-in-out hover:duration-300 hover:ease-in-out transform hover:scale-110">
                                 <circle cx="48" cy="48" r="48" fill="#53DEE9"></circle>
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M47.858 79.875c-9.342-.007-16.866-2.249-22.124-6.275-5.321-4.075-8.144-9.857-8.144-16.4 0-6.304 2.817-10.85 6.004-13.923 2.497-2.408 5.253-3.95 7.172-4.838a99.818 99.818 0 01-1.46-4.876c-.648-2.41-1.284-5.237-1.284-7.309 0-2.452.535-4.915 1.977-6.829 1.523-2.021 3.816-3.104 6.574-3.104 2.156 0 3.986.8 5.42 2.179 1.369 1.318 2.28 3.07 2.91 4.895 1.106 3.208 1.537 7.238 1.657 11.26h2.643c.12-4.022.551-8.052 1.657-11.26.63-1.825 1.541-3.577 2.91-4.895 1.434-1.38 3.264-2.18 5.42-2.18 2.758 0 5.051 1.084 6.574 3.105 1.442 1.914 1.977 4.377 1.977 6.83 0 2.071-.636 4.898-1.284 7.308a99.707 99.707 0 01-1.46 4.876c1.919.888 4.675 2.43 7.172 4.838 3.187 3.073 6.004 7.619 6.004 13.923 0 6.543-2.823 12.325-8.144 16.4-5.257 4.026-12.782 6.268-22.124 6.275h-.047z"
@@ -470,9 +479,9 @@
                     <div class="flex">
                         <button
                             class="p-[2px] w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex h-8 font-semibold leading-4 opacity-100 text-xs bg-transparent shadow mr-2">
-                            <svg viewBox="0 0 24 24" height="24" width="24" color="textSubtle"
+                            <svg id="openSettings" viewBox="0 0 24 24" height="24" width="24" color="textSubtle"
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="fill-current text-textViolet mr-2 shrink-0 self-center">
+                                class="fill-current text-textViolet hover:text-[#857E98] mr-2 shrink-0 self-center">
                                 <path
                                     d="M19.43 12.98C19.47 12.66 19.5 12.34 19.5 12C19.5 11.66 19.47 11.34 19.43 11.02L21.54 9.37C21.73 9.22 21.78 8.95 21.66 8.73L19.66 5.27C19.54 5.05 19.27 4.97 19.05 5.05L16.56 6.05C16.04 5.65 15.48 5.32 14.87 5.07L14.49 2.42C14.46 2.18 14.25 2 14 2H9.99996C9.74996 2 9.53996 2.18 9.50996 2.42L9.12996 5.07C8.51996 5.32 7.95996 5.66 7.43996 6.05L4.94996 5.05C4.71996 4.96 4.45996 5.05 4.33996 5.27L2.33996 8.73C2.20996 8.95 2.26996 9.22 2.45996 9.37L4.56996 11.02C4.52996 11.34 4.49996 11.67 4.49996 12C4.49996 12.33 4.52996 12.66 4.56996 12.98L2.45996 14.63C2.26996 14.78 2.21996 15.05 2.33996 15.27L4.33996 18.73C4.45996 18.95 4.72996 19.03 4.94996 18.95L7.43996 17.95C7.95996 18.35 8.51996 18.68 9.12996 18.93L9.50996 21.58C9.53996 21.82 9.74996 22 9.99996 22H14C14.25 22 14.46 21.82 14.49 21.58L14.87 18.93C15.48 18.68 16.04 18.34 16.56 17.95L19.05 18.95C19.28 19.04 19.54 18.95 19.66 18.73L21.66 15.27C21.78 15.05 21.73 14.78 21.54 14.63L19.43 12.98ZM12 15.5C10.07 15.5 8.49996 13.93 8.49996 12C8.49996 10.07 10.07 8.5 12 8.5C13.93 8.5 15.5 10.07 15.5 12C15.5 13.93 13.93 15.5 12 15.5Z">
                                 </path>
@@ -480,12 +489,12 @@
                         </button>
                     </div>
                     <!-- Notifications --->
-                    <div class="flex">
+                    <div class="flex items-center justify-center h-full">
                         <div
-                            class="p-[2px] w-8 relative items-center border-0 rounded-2xl cursor-pointer inline-flex justify-center tracking-[0.03rem] leading-4 opacity-100 h-8 mr-2 shadow-none ">
-                            <svg viewBox="0 0 24 24" height="24" width="24" color="textSubtle"
+                            class="relative pr-4 pl-[6px] cursor-pointer justify-center items-center flex">
+                            <svg id="toggleNotification" viewBox="0 0 24 24" height="24" width="24" color="textSubtle"
                                 xmlns="http://www.w3.org/2000/svg"
-                                class="fill-current text-textViolet shrink-0 self-center mr-0">
+                                class="fill-current text-textViolet shrink-0 self-center w-[30px]">
                                 <g clip-path="url(#clip0_108_5436)">
                                     <path
                                         d="M12.0001 22C13.1001 22 14.0001 21.1 14.0001 20H10.0001C10.0001 21.1 10.8901 22 12.0001 22ZM18.0001 16V11C18.0001 7.93 16.3601 5.36 13.5001 4.68V4C13.5001 3.17 12.8301 2.5 12.0001 2.5C11.1701 2.5 10.5001 3.17 10.5001 4V4.68C7.63005 5.36 6.00005 7.92 6.00005 11V16L4.71005 17.29C4.08005 17.92 4.52005 19 5.41005 19H18.5801C19.4701 19 19.9201 17.92 19.2901 17.29L18.0001 16Z"
@@ -499,19 +508,26 @@
                             </svg>
                         </div>
                         <!-- Notification Pop Up --->
-                        <div class="top-full fixed bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-r-3xl w-full overflow-hidden z-[1001] pointer-events-none h-[520px] invisibl">
+                        <div id="windowNotification" class="top-14 fixed bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-3xl w-[400px] pointer-events-none overflow-hidden z-[1001] h-[520px] invisible">
                             <div class="">
-                                <div class="">
-                                    <div class="flex w-[300%] translate-x-0">
+                                <div tabindex="-1" class="">
+                                    <div class="flex w-[300%] translate-x-[0%]">
                                         <div class="w-full max-h-[400px]">
                                             <div class="p-6">
                                                 <div class="pl-10 pb-6 pt-12">
                                                     <img src="./components/img/welcome-notification-bell.webp" class="text-transparent h-auto max-w-full">
                                                 </div>
-                                                <div class="gap-y-3 flex flex-col justify-center items-center">
-                                                    <div class="text-colorWhite text-2xl font-semibold leading-[120%] text-center">Notifications From PancakeSwap</div>
-                                                    <div class="text-colorsSecondary font-normal leading-6 text-base text-center">Get started with notifications from PancakeSwap. First authorize notifications by signing in your wallet</div>
-                                                    <div class="">
+                                                <div class="gap-3 flex flex-col justify-center items-center max-w-[350px]">
+                                                    <div class="text-colorWhite text-2xl font-semibold leading-[120%] text-center">
+                                                        Notifications From PancakeSwap
+                                                    </div>
+                                                    <div class="text-colorsSecondary font-normal leading-6 text-base text-center">
+                                                        Get started with notifications from PancakeSwap. First authorize notifications by signing in your wallet
+                                                    </div>
+                                                    <div class="grid-flow-row gap-y-3 w-full mt-6 grid m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <button class="relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 px-6 bg-colorsPrimary text-[#191326] h-[50px]">
+                                                            Connect Wallet
+                                                        </button>
                                                         <!-- INSERIRE BOTTONE Connect Wallet --->
                                                     </div>
                                                 </div>
@@ -531,14 +547,14 @@
                     </div>
                     <!-- Switch Crypto --->
                     <div class="h-full">
-                        <div class="flex items-center h-full mr-2">
-                            <div
+                        <div id="cryptoSel" class="flex items-center h-full mr-2">
+                            <div 
                                 class="items-center bg-[#353547] rounded-2xl shadow-[0px_-2px_0px_inset_rgba(0, 0, 0, 0.1)] cursor-pointer inline-flex h-8 pl-8 pr-2 relative">
                                 <div class="left-0 absolute top-0 z-[102] max-h-8 max-w-8 w-full">
-                                    <img src="https://assets.pancakeswap.finance/web/chains/324.png"
+                                    <img id="imgCrypto" src="https://assets.pancakeswap.finance/web/chains/324.png"
                                         class="rounded-[50%] h-full left-0 top-0 w-full max-w-full">
                                 </div>
-                                <div class="block ml-2 mr-1 text-colorWhite font-extrabold">
+                                <div  id="topCrypto" class="block ml-2 mr-1 text-colorWhite font-extrabold">
                                     <div class="block">
                                         zkSync Era
                                     </div>
@@ -546,7 +562,7 @@
                                         zkSync
                                     </div>
                                 </div>
-                                <svg viewBox="0 0 24 24" color="text" width="24px" xmlns="http://www.w3.org/2000/svg"
+                                <svg id="svgCrypto" viewBox="0 0 24 24" color="text" width="24px" xmlns="http://www.w3.org/2000/svg"
                                     class="self-center fill-current text-colorWhite">
                                     <path
                                         d="M8.11997 9.29006L12 13.1701L15.88 9.29006C16.27 8.90006 16.9 8.90006 17.29 9.29006C17.68 9.68006 17.68 10.3101 17.29 10.7001L12.7 15.2901C12.31 15.6801 11.68 15.6801 11.29 15.2901L6.69997 10.7001C6.30997 10.3101 6.30997 9.68006 6.69997 9.29006C7.08997 8.91006 7.72997 8.90006 8.11997 9.29006Z">
@@ -554,7 +570,7 @@
                                 </svg>
                             </div>
                             <!-- Menù a tendina --->
-                            <div class="fixed inset-[0px_auto_auto_0px] translate-x-[1521px] translate-y-[55px] bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 w-[280px] z-[1001] pointer-events-none invisible">
+                            <div id="cryptoMenu" class="fixed inset-[0px_auto_auto_0px] translate-x-[1521px] translate-y-[55px] bg-[#27262c] border-[1px] border-solid border-[#383241] rounded-2xl py-1 w-[280px] z-[1001] pointer-events-none invisible">
                                 <div class="">
                                     <div class="py-2 px-4 ">
                                         <div class="text-textViolet font-normal leading-6 text-base">
@@ -563,63 +579,63 @@
                                     </div>
                                     <hr class="border-[#383241] border-solid border-t-[1px] my-1"/>
                                     <!-- BNB Chains --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="bnbChains" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/56.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             BNB Chains
                                         </div>
                                     </button>
                                     <!-- Ethereum --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="ethereum" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/1.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             Ethereum
                                         </div>
                                     </button>
                                     <!-- Polygon zkEVM --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="polygon" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/1101.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             Polygon zkEVM
                                         </div>
                                     </button>
                                     <!-- zkSync Era --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="zkSync" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/324.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             zkSync Era
                                         </div>
                                     </button>
                                     <!-- Arbitrum One --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="arbitrum" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/42161.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             Arbitrum One
                                         </div>
                                     </button>
                                     <!-- Linea --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="linea" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/59144.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             Linea
                                         </div>
                                     </button>
                                     <!-- Base --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="base" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/8453.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             Base
                                         </div>
                                     </button>
                                     <!-- opBNB --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="opBNB" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/56.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             opBNB
                                         </div>
                                     </button>
                                     <!-- Aptos --->
-                                    <button class="justify-start cursor-pointer items-center border-[0px] bg-transparent text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
+                                    <button id="aptos" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://aptos.pancakeswap.finance/images/apt.png" class="text-transparent max-h-6 h-auto max-w-full"/>
                                         <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
                                             Aptos
@@ -642,113 +658,7 @@
             </nav>
         </div>
         <!-- FINE NAVBAR -->
-        <div class="relative flex max-w-[100vw] mt-[57px]">
-            <div class="grow max-w-full">
-                <div class="w-screen ml-[-8px] overflow-hidden box-border">
-                    <div class="">
-                        <div class="bg-radial-gradient-main py-12 relative flex-col items-center z-[1] flex">
-                            <div class="m-0 w-full overflow-visible p-4 max-w-[1200px]">
-                                <!-- INIZIO BANNER -->
-                                <div class="pt-0 -mt-8 mb-[30px] relative max-w-full box-border">
-                                    <div
-                                        class="relative overflow-visible opacity-0 animate-[placeholder] touch-pan-y ml-auto mr-auto list-none p-0 z-[1] block">
-                                        <div class="relative w-full h-full z-[1] flex transition-transform box-content">
-                                            <!-- Prima Card Banner --->
-                                            <div
-                                                class="p-5 h-auto w-[1168px] opacity-0 overflow-visible pointer-events-none transition-opacity shrink-0 relative block">
-                                                <div
-                                                    class="max-w-[1128px] rounded-[32px] h-48 bg-radial-gradient-card-1 bg-linear-gradient-card-1 gap-0 flex flex-row justify-between">
-                                                    <!-- Sinistra Prima Card Banner --->
-                                                    <div class="flex-1 py-4 pl-6 gap-[6px] flex flex-col justify-between">
-                                                        <div class="w-full gap-y-3 flex flex-col justify-start">
-                                                            <div class="w-full gap-2 flex flex-row justify-start items-center">
-                                                                <div class="gap-1 flex flex-row items-center">
-                                                                    <span
-                                                                        class="box-border inline-block overflow-hidden w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 relative max-w-full">
-                                                                        <span
-                                                                            class="box-border block w-auto h-auto bg-none opacity-100 border-0 m-0 p-0 max-w-full">
-                                                                            <img src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2720%27%20height=%2720%27/%3e"
-                                                                                class="block max-w-full w-auto h-auto bg-none opacity-100 border-0 m-0 p-0">
-                                                                        </span>
-                                                                        <img src="https://assets.pancakeswap.finance/web/banners/pancakeswap-logo.png"
-                                                                            class="absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full" />
-                                                                    </span>
-                                                                    <div
-                                                                        class="text-[#090909] font-semibold text-base leading-5">
-                                                                        PancakeSwap
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="w-full gap-[6px] flex flex-col justify-start">
-                                                                <div class="text-lg leading-[30px] text-[#7645D9] font-extrabold"
-                                                                    style="text-shadow: -2px 2px 0 rgb(255 255 255), 2px 2px 0 rgb(255 255 255), 2px -2px 0 rgb(255 255 255), -2px -2px 0 rgb(255 255 255);">
-                                                                    Be Our Top 100 Traders and Earn a 3% Trading Fee Rebate!
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="w-full flex flex-row justify-start items-center">
-                                                            <a href=""
-                                                                class="py-1 flex font-semibold items-center w-fit text-[#7645D9] leading-6 text-base no-underline">
-                                                                <div class="text-[#7645D9] font-semibold text-[14px] leading-4">
-                                                                    Join Now
-                                                                </div>
-                                                                <svg viewBox="0 0 24 24" color="#7645D9" ml="4px" width="20px"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    class="self-center fill-current text-[#7645D9] shrink-0 ml-1">
-                                                                    <path
-                                                                        d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
-                                                                    </path>
-                                                                </svg>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Destra Prima Card Banner --->
-                                                    <div class="relative flex-1 flex">
-                                                        <div
-                                                            class="absolute w-full left-0 bottom-0 h-[122%] overflow-hidden rounded-b-[32px]">
-                                                            <div
-                                                                class="bg-url('https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png') w-[468px] h-56 bg-cover">
-                                                            </div>
-                                                            <div
-                                                                class="left-[10%] top-0 absolute animate__animated animate__ease-in-out animate__infinite">
-                                                                <div
-                                                                    class="w-[85px] h-[74px] bg-url('https://assets.pancakeswap.finance/web/banners/top-traders/floating-item.png') bg-cover">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Seconda Card Banner --->
-                                            <div class="">
-        
-                                            </div>
-                                            <!-- Terza Card Banner --->
-                                            <div class="">
-        
-                                            </div>
-                                            <!-- Quarta Card Banner --->
-                                            <div class="">
-        
-                                            </div>
-                                            <!-- Quinta Card Banner --->
-                                            <div class="">
-        
-                                            </div>
-                                            <!-- Sesta Card Banner --->
-                                            <div class="">
-        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FINE BANNER --->
+
         <!-- INIZIO FEATURED NEWS --->
         <div>
             <div class="relative flex-col items-center z-[1] py-12 flex bg-[#08060b] ">
@@ -782,7 +692,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/9dc930efb33c54ad23b510e48662b4ce.avif"
+                                            <img src="./components/img/1.avif"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -807,7 +717,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/5c23a24983890128d7cd885b85b4f123.jpg"
+                                            <img src="./components/img/2.webp"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -832,7 +742,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/01491605e0172e151f802d0048faeff6.png"
+                                            <img src="./components/img/3.avif"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -857,7 +767,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/955c58c7e0e403f68c2c199336a6eec1.png"
+                                            <img src="./components/img/4.avif"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -882,7 +792,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/376fb02766f9d73c05c585df4ae991a2.jpeg"
+                                            <img src="./components/img/5.avif"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -907,7 +817,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/0b5ef08d6a92dd845b96f5a399c3b547.jpeg"
+                                            <img src="./components/img/6.jpg"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -932,7 +842,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/3de561ce48d755a2fe33986ac0a61191.jpg"
+                                            <img src="./components/img/7.avif"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -957,7 +867,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/780f997573a43be69109266497a574c2.jpg"
+                                            <img src="./components/img/8.webp"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -982,7 +892,7 @@
                                         class="align-top w-[280px] h-[387px] rounded-3xl bg-[#27262c] shadow-[0_0_2px_0_rgb(56,50,65,1)] inline-block mr-[34px] cursor-pointer snap-start">
                                         <div
                                             class="h-[200px] rounded-t-3xl rounded-tr-3xl flex justify-center items-center overflow-hidden">
-                                            <img src="https://sgp1.digitaloceanspaces.com/strapi.space/fd6a62cca098bcc799188177e39fd281.jpg"
+                                            <img src="./components/img/1.avif"
                                                 class="shrink-0 min-w-full min-h-full h-auto max-w-full">
                                         </div>
                                         <div class="h-[187px] rounded-b-3xl rounded-bl-3xl overflow-hidden border-t-0 p-5">
@@ -1016,6 +926,122 @@
         </div>
         <!-- FINE FEATURED NEWS --->
     </div>
+    <!-- INIZIO FINESTRA SETTINGS --->
+    <div class="relative z-[2] transition-[200ms]">
+        <div role="dialog">
+            <div id="windowSettings" class="transform translate-x-0 animate__animated animate__fadeIn flex flex-col justify-center items-center fixed inset-0 z-[99] invisible">
+                <div>
+                    <div id="closeBgSettings" role="presentation" class="fixed top-0 left-0 w-full h-full bg-[#f4eeff99] z[20] animate__animated animate__fadeIn"></div>
+                    <div class="overflow-visible w-auto bottom-auto rounded-[32px] max-h-[100vh] bg-[#27262c] shadow-settingsBox border-[1px] border-solid border-[#383241] z-[100] absolute min-h-[300px] max-w-none translate-x-[-50%] translate-y-[-50%] flex justify-center items-center">
+                        <div class="rounded-[32px] overflow-hidden min-w-[320px]">
+                            <div class="bg-gradient-to-br from-[#3b4155] to-[#3a3045] items-center border-b-[1px] border-solid border-[#383241] flex py-3 px-6">
+                                <div class="items-center flex-1 flex">
+                                    <h2 class="text-sm font-semibold leading-[1.1] text-colorWhite">Settings</h2>
+                                </div>
+                                <button class="p-[2px] w-12 relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 h-12 bg-transparent text-colorsPrimary shadow-none hover:text-[#2994A4]">
+                                    <svg id="closeSettings" viewBox="0 0 24 24" color="primary" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-colorsPimary shrink-0"><path fill="currentColor" d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.10997 5.69997C6.71997 5.30997 6.08997 5.30997 5.69997 5.69997C5.30997 6.08997 5.30997 6.71997 5.69997 7.10997L10.59 12L5.69997 16.89C5.30997 17.28 5.30997 17.91 5.69997 18.3C6.08997 18.69 6.71997 18.69 7.10997 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z"></path></svg>
+                                </button>
+                            </div>
+                            <div class="items-start flex max-h-[90vh] flex-col overflow-auto relative top-0 p-6">
+                                <div class="max-h-none flex-col h-auto flex">
+                                    <div class="flex flex-col pb-6">
+                                        <div class="text-colorsSecondary font-semibold leading-6 mb-6 text-xs">
+                                            GLOBAL
+                                        </div>
+                                        <!-- Dark Mode --->
+                                        <div class="flex justify-between mb-6">
+                                            <div class="text-colorWhite font-normal leading-6 text-base">
+                                                Dark mode
+                                            </div>
+                                            <div class="items-center bg-[#666171] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative w-[56px]">
+                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
+                                                <div class="left-[calc(100%-30px)] bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] absolute top-[3px] transition-left duration-200 ease-in delay-0 w-[26px] z-[1] hover:settingsSwitch">
+                                                    <div class="flex items-center justify-center h-full">
+                                                        <svg viewBox="0 0 24 24" color="secondary" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-colorsSecondary shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z"></path></svg>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-around items-center w-full h-full">
+                                                    <svg viewBox="0 0 24 24" color="backgroundAlt" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#27262c] shrink-0"><path d="M5.66 4.2L6.05 4.59C6.44 4.97 6.44 5.61 6.05 5.99L6.04 6C5.65 6.39 5.03 6.39 4.64 6L4.25 5.61C3.86 5.23 3.86 4.6 4.25 4.21L4.26 4.2C4.64 3.82 5.27 3.81 5.66 4.2Z"></path><path d="M1.99 10.95H3.01C3.56 10.95 4 11.39 4 11.95V11.96C4 12.51 3.56 12.95 3 12.94H1.99C1.44 12.94 1 12.5 1 11.95V11.94C1 11.39 1.44 10.95 1.99 10.95Z"></path><path d="M12 1H12.01C12.56 1 13 1.44 13 1.99V2.96C13 3.51 12.56 3.95 12 3.94H11.99C11.44 3.94 11 3.5 11 2.95V1.99C11 1.44 11.44 1 12 1Z"></path><path d="M18.34 4.2C18.73 3.82 19.36 3.82 19.75 4.21C20.14 4.6 20.14 5.22 19.75 5.61L19.36 6C18.98 6.39 18.35 6.39 17.96 6L17.95 5.99C17.56 5.61 17.56 4.98 17.95 4.59L18.34 4.2Z"></path><path d="M18.33 19.7L17.94 19.31C17.55 18.92 17.55 18.3 17.95 17.9C18.33 17.52 18.96 17.51 19.35 17.9L19.74 18.29C20.13 18.68 20.13 19.31 19.74 19.7C19.35 20.09 18.72 20.09 18.33 19.7Z"></path><path d="M20 11.95V11.94C20 11.39 20.44 10.95 20.99 10.95H22C22.55 10.95 22.99 11.39 22.99 11.94V11.95C22.99 12.5 22.55 12.94 22 12.94H20.99C20.44 12.94 20 12.5 20 11.95Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11.95C6 8.64 8.69 5.95 12 5.95C15.31 5.95 18 8.64 18 11.95C18 15.26 15.31 17.95 12 17.95C8.69 17.95 6 15.26 6 11.95ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"></path><path d="M12 22.9H11.99C11.44 22.9 11 22.46 11 21.91V20.95C11 20.4 11.44 19.96 11.99 19.96H12C12.55 19.96 12.99 20.4 12.99 20.95V21.91C12.99 22.46 12.55 22.9 12 22.9Z"></path><path d="M5.66 19.69C5.27 20.08 4.64 20.08 4.25 19.69C3.86 19.3 3.86 18.68 4.24 18.28L4.63 17.89C5.02 17.5 5.65 17.5 6.04 17.89L6.05 17.9C6.43 18.28 6.44 18.91 6.05 19.3L5.66 19.69Z"></path></svg>
+                                                    <svg viewBox="0 0 24 24" color="backgroundAlt" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#27262c] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Subgraph Health Indicator --->
+                                        <div class="flex justify-between items-center mb-6">
+                                            <div class="flex items-center">
+                                                <div class="text-colorWhite font-normal leading-6 text-base">
+                                                    Subgraph Health Indicator
+                                                </div>
+                                                <div class="flex items-center ml-1">
+                                                    <div class="flex items-center">
+                                                        <svg viewBox="0 0 24 24" color="textSubtle" width="16px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-textViolet shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z"></path></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
+                                                <div class="hover:shadow-[#7645d9] bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[3px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[1]"></div>
+                                            </div>
+                                        </div>
+                                        <!-- Show username --->
+                                        <div class="flex justify-between items-center mb-6">
+                                            <div class="flex items-center">
+                                                <div class="text-colorWhite font-normal leading-6 text-base">
+                                                    Show username
+                                                </div>
+                                                <div class="flex items-center ml-1">
+                                                    <div class="flex items-center">
+                                                        <svg viewBox="0 0 24 24" color="textSubtle" width="16px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-textViolet shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z"></path></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
+                                                <div class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[3px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[1]"></div>
+                                            </div>
+                                        </div>
+                                        <!-- Allow notifications --->
+                                        <div class="flex justify-between items-center mb-6">
+                                            <div class="flex items-center">
+                                                <div class="text-colorWhite font-normal leading-6 text-base">
+                                                    Allow notifications
+                                                </div>
+                                                <div class="flex items-center ml-1">
+                                                    <div class="flex items-center">
+                                                        <svg viewBox="0 0 24 24" color="textSubtle" width="16px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-textViolet shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 16H13V18H11V16ZM12.61 6.04C10.55 5.74 8.73 7.01 8.18 8.83C8 9.41 8.44 10 9.05 10H9.25C9.66 10 9.99 9.71 10.13 9.33C10.45 8.44 11.4 7.83 12.43 8.05C13.38 8.25 14.08 9.18 14 10.15C13.9 11.49 12.38 11.78 11.55 13.03C11.55 13.04 11.54 13.04 11.54 13.05C11.53 13.07 11.52 13.08 11.51 13.1C11.42 13.25 11.33 13.42 11.26 13.6C11.25 13.63 11.23 13.65 11.22 13.68C11.21 13.7 11.21 13.72 11.2 13.75C11.08 14.09 11 14.5 11 15H13C13 14.58 13.11 14.23 13.28 13.93C13.3 13.9 13.31 13.87 13.33 13.84C13.41 13.7 13.51 13.57 13.61 13.45C13.62 13.44 13.63 13.42 13.64 13.41C13.74 13.29 13.85 13.18 13.97 13.07C14.93 12.16 16.23 11.42 15.96 9.51C15.72 7.77 14.35 6.3 12.61 6.04Z"></path></svg>
+                                                    </div>
+                                                </div>
+                                                <div class="border-[2px] border-solid border-[#31d0aa] rounded-2xl py-[3px] px-[6px] text-[#31d0aa] ml-[6px] font-bold text-[10px]">
+                                                    BETA
+                                                </div>
+                                            </div>
+                                            <div class="items-center bg-[#31d0aa] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
+                                                <div class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[calc(100%-30px)] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[1]"></div>
+                                            </div>
+                                        </div>
+                                        <!-- Show testnet --->
+                                        <div class="flex justify-between items-center mb-6">
+                                            <div class="flex items-center">
+                                                <div class="text-colorWhite font-normal leading-6 text-base">
+                                                    Show testnet
+                                                </div>
+                                            </div>
+                                            <div class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
+                                                <div class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[3px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[1]"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINE FINESTRA SETTINGS --->
 </body>
 
 </html>
