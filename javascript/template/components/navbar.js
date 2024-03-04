@@ -111,6 +111,7 @@ const addLanguageHoverListeners = (elementId, menuId) => {
 };
 
 addLanguageHoverListeners('languageSVG', '#languageButton');
+addLanguageHoverListeners('languageSVG2', '#languageButton2');
 
 
 // Cambia colore bottoni lingue
@@ -151,6 +152,35 @@ const languageItems = [
     { id: '#lingua26', show: colorLanguage, hide: colorLanguage },
     { id: '#lingua27', show: colorLanguage, hide: colorLanguage },
     { id: '#lingua28', show: colorLanguage, hide: colorLanguage },
+
+    { id: '#lingua1-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua2-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua3-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua4-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua5-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua6-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua7-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua8-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua9-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua10-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua11-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua12-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua13-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua14-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua15-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua16-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua17-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua18-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua19-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua20-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua21-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua22-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua23-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua24-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua25-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua26-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua27-2', show: colorLanguage, hide: colorLanguage },
+    { id: '#lingua28-2', show: colorLanguage, hide: colorLanguage },
 ];
 
 
@@ -164,13 +194,22 @@ languageItems.forEach(item => {
 // Mostra e nascondi finestra settings
 const toggleSettings = (id) => {
     const menu = document.querySelector(id);
-    menu.classList.toggle('visible');
-    menu.classList.toggle('invisible');
+    if (menu.classList.contains('fade-in')) {
+        menu.classList.toggle('fade-in');
+        menu.classList.toggle('fade-out');
+    } else if (menu.classList.contains('fade-out')) {
+        menu.classList.toggle('fade-out');
+    } else {
+        menu.classList.toggle('fade-in');
+    }
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('pointer-events-auto');
 };
+
 
 const addSettingsClick = (elementId, menuId) => {
     const element = document.getElementById(elementId);
-    element.addEventListener('click', () => toggleMenu(menuId));
+    element.addEventListener('click', () => toggleSettings(menuId));
 };
 
 addSettingsClick('openSettings', '#windowSettings');
@@ -189,7 +228,7 @@ const toggleNotification = (id) => {
 
 const addNotificationClick = (elementId, menuId) => {
     const element = document.getElementById(elementId);
-    element.addEventListener('click', () => toggleMenu(menuId));
+    element.addEventListener('click', () => toggleSettings(menuId));
 };
 
 addNotificationClick('toggleNotification', '#windowNotification');
@@ -211,6 +250,21 @@ const addCryptoHover = (elementId, menuId) => {
 addCryptoHover('cryptoSel', '#topCrypto');
 addCryptoHover('cryptoSel', '#svgCrypto');
 addCryptoHover('cryptoSel', '#imgCrypto');
+
+
+// Spostamento Featured News 
+const featuredNews = document.getElementById("featuredNews");
+const moveLeftButton = document.getElementById("moveLeftButton");
+const moveRightButton = document.getElementById("moveRightButton");
+
+moveLeftButton.addEventListener("click", function () {
+    featuredNews.scrollLeft -= 320;
+});
+
+moveRightButton.addEventListener("click", function () {
+    featuredNews.scrollLeft += 320;
+});
+
 
 
 
