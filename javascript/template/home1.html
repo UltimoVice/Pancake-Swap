@@ -4,51 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Pancake Swap</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="./components/navbar.js" defer="defer"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // azzurrino
                         'colorsPrimary': '#1fc7d4',
-                        // violetto
                         'colorsSecondary': '#a881fc',
-                        // verdino
                         'colorsTertiary': '#badd2',
                         'colorWhite': '#f4eeff',
                         'bgColor': '#08060b',
                         'textViolet': '#b8add2',
-                    }
-                },
-                fontFamily: {
-                    '*': ['Kanit', 'sans-serif']
-                }
-            }
 
+                    },
+                    fontFamily: {
+                        'display': ['Kanit', 'sans-serif']
+                    },
+                    traslated: {
+                        'transform-3d-0': 'translate3d(0px, 0px, 0px)'
+                    },
+                    backgroundImage: theme => ({
+                        'radial-gradient-card-1': 'radial-gradient(112.67% 197.53% at 30.75% 3.72%, rgb(154, 237, 255) 0%, rgb(204, 194, 254) 76.19%, rgb(198, 163, 255) 100%)',
+                        'linear-gradient-card-1': 'linear-gradient(rgba(231, 253, 255, 0.2) 0%, rgba(242, 241, 255, 0.2) 100%)',
+                        'radial-gradient-main': 'radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%)',
+                    }),
+                },
+            },
+            plugins: [
+                function ({ addUtilities }) {
+                    const newUtilities = {
+                        '.bg-radial-gradient-card-1': {
+                            'background-image': 'var(--bg-radial-gradient)',
+                        },
+                        '.bg-linear-gradient-card-1': {
+                            'background-image': 'var(--bg-linear-gradient)',
+                        },
+                    }
+
+                    addUtilities(newUtilities, ['responsive', 'hover'])
+                },
+            ],
         }
     </script>
     <style>
-        * {
-            font-size: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
-<!-- body da far notare le classi aggiunte -->
+        .custom-scrollbar::-webkit-scrollbar {
+    width: 8px; 
+    }
 
-<body class="bg-bgColor w-screen overflow-x-hidden">
+    .custom-scrollbar::-webkit-scrollbar-track {
+    background: #27262c; 
+    border-radius: 1rem;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #B8ADD2; 
+    border-radius:  20px;
+    }
+    </style>
+</head>
+
+<body class="bg-[#08060b] box-border font-display antialiased overflow-y-auto overflow-x-hidden custom-scrollbar">
     <!-- marcello part - navbar  -->
+
 
     <!-- prima parte -->
     <div class="w-full h-fit bg-gradient-to-r from-[#21193a] to-[#191326] ">
@@ -60,7 +86,7 @@
                 <!-- contenuto -->
                 <div class="w-full h-full flex max-w-[1200px] max-h-[640px] justify-center items-center ">
                     <div class="flex flex-1 flex-col min-w-[560px] pl-7"><!-- sx -->
-                        <div class="leading-6 mr-4 pr-[10px] text-left text-base block mb-4">
+                        <div class="leading-6  text-left text-base block mb-4">
                             <div class="text-colorWhite text-[88px] font-semibold mr-2 leading-[110%] inline-block">
                                 Everyone's</div>
                             <div
@@ -76,11 +102,11 @@
                         <!-- button non mi funge il bold-->
                         <div class="flex">
                             <button id="connectWallet"
-                                class="mr-2 text-[#191326] text-base font-normal bg-colorsPrimary border-colorsPrimary border-solid border rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">Connect
+                                class="mr-2 text-[#191326] text-base font-semibold bg-colorsPrimary border-colorsPrimary border-solid border rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">Connect
                                 Wallet </button>
                             <a class="" href="">
                                 <button
-                                    class="text-colorsPrimary text-base font-normal border-colorsPrimary border-solid border mr-1 rounded-2xl h-12 px-6 fill-current  flex items-center justify-center ">Trade
+                                    class="text-colorsPrimary text-base font-semibold border-colorsPrimary border-solid border mr-1 rounded-2xl h-12 px-6 fill-current  flex items-center justify-center ">Trade
                                     Now</button>
                             </a>
                         </div>
@@ -128,7 +154,7 @@
                 </div>
                 <!-- background svg-->
                 <div class=" w-screen h-full bottom-[-3px] align-bottom block absolute inset-0">
-                    <svg viewBox="0 0 1660 339" class="w-screen self-center slide-svg-dark absolute inset-x-0 bottom-0"
+                    <svg viewBox="0 0 1660 339" class="w-screen self-center slide-svg-dark z-[-1] absolute inset-x-0 bottom-0"
                         width="100%" color="text" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M804 166.523C520.5 166.523 267.5 290.022 0 304V338.5H1660V0C1358.83 0 1104 166.523 804 166.523Z"
@@ -217,7 +243,8 @@
                         in the last 30 days
                     </div>
                 </div>
-            </div>
+            </div>   
+        
 
             <!-- infinity orizzontale  -->
             <div class="relative max-w-[1063px] overflow-hidden flex "
@@ -355,7 +382,7 @@
         </div>
     </div>
         <!-- svg di sfondo -->
-        <div class="w-screen h-fit box-border inset-x-0 block bottom-[-400px] absolute">
+        <div class="w-screen h-fit box-border inset-x-0 block bottom-[-475px] absolute">
             <div class="h-fit w-fit bottom-[325px] left-[20px] absolute"><span
                     style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span
                         style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img
@@ -387,7 +414,6 @@
                         style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
             </div>
         </div>
-
     </div>
 </body>
 
