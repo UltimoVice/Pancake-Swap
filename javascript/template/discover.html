@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="../javascript/template/components/navbar.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'colorsPrimary': '#1fc7d4',
+                        'colorsSecondary': '#a881fc',
+                        'colorsTertiary': '#badd2',
+                        'colorWhite': '#f4eeff',
+                        'bgColor': '#08060b',
+                        'textViolet': '#b8add2',
+
+                    },
+                    fontFamily: {
+                        'display': ['Kanit', 'sans-serif']
+                    },
+                    traslated: {
+                        'transform-3d-0': 'translate3d(0px, 0px, 0px)'
+                    }
+                },
+            }
+
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #27262c;
+            border-radius: 1rem;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #B8ADD2;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#08060b] box-border display antialiased">
+
+    <div class="relative flex-col items-center z-[1] py-12 flex bg-bgColor">
+        <div class="m-0 w-full px-4 overflow-visible max-w-[1200px]">
+            <div class="z-[-1] overflow-hidden absolute w-full h-full right-0 top-0">
+                <div class="absolute flex w-full top-0">
+                    <!-- svg onda -->
+                    <svg viewBox="0 0 1660 48" preserveAspectRatio="none" color="text" width="20px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="fill-[#201335] w-full h-full max-h-12 self-center text-colorWhite shrink-0 overflow-hidden ">
+                        <path d="M1660 48C1139.02 46.1887 336.256 15.2453 0 0H1660V48Z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex justify-center items-center flex-col pt-[60px]">
+                <!-- svg primo logo coniglietto piccolo -->
+                <svg viewBox="0 0 48 48" height="48px" width="48px" mb="24px" color="text"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="self-center fill-current text-colorWhite shrink-0 mb-6 h-12 w-12 overflow-hidden">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.9024 0C10.8947 0 7.87179 3.60289 8.60749 7.50271L10.3484 16.7306C4.45101 19.3061 0 23.7533 0 29.3333V32.7273C0 37.3405 3.08306 41.2029 7.39317 43.8102C11.7369 46.4379 17.6132 48 24 48C30.3868 48 36.2631 46.4379 40.6068 43.8102C44.9169 41.2029 48 37.3405 48 32.7273V29.3333C48 23.7236 43.5028 19.2593 37.5552 16.6889L39.2882 7.50271C40.0239 3.6029 37.001 0 32.9933 0C29.4567 0 26.5896 2.83809 26.5896 6.33904V14.147C25.7386 14.0899 24.8746 14.0606 24 14.0606C23.0897 14.0606 22.1908 14.0923 21.3061 14.1541V6.33904C21.3061 2.83809 18.4391 0 14.9024 0ZM17.8776 28.3637C17.8776 30.372 16.7811 32 15.4286 32C14.0761 32 12.9796 30.372 12.9796 28.3637C12.9796 26.3554 14.0761 24.7273 15.4286 24.7273C16.7811 24.7273 17.8776 26.3554 17.8776 28.3637ZM34.7757 28.3637C34.7757 30.372 33.6792 32 32.3267 32C30.9742 32 29.8777 30.372 29.8777 28.3637C29.8777 26.3554 30.9742 24.7273 32.3267 24.7273C33.6792 24.7273 34.7757 26.3554 34.7757 28.3637Z"
+                        fill="url(#paint0_linear)"></path>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="24" y1="0" x2="24" y2="48"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#7645D9"></stop>
+                            <stop offset="1" stop-color="#5121B1"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="text-colorWhite font-normal leading-6 px-5 text-center text-base">
+                    <div class="text-[40px] text-colorWhite font-semibold leading-[110%] inline-block">
+                        Discover the
+                    </div>
+                    <div class="text-[40px] text-textViolet font-semibold ml-2 leading-[110%] inline-block">
+                        Ecosystem
+                    </div>
+                </div>
+                <!-- div che contiene la prima card img ecc -->
+                <div
+                    class="w-[1152px] rounded-3xl bg-gradient-to-r from-[#313d5c] to-[#3d2a54] box-border pt-12 pr-6 pb-6 min-h[360px] mt-12">
+                    <div class="gap-8 flex flex-row items-center">
+                        <img class="text-transparent ml-[-72px] h-[340px] w-[340px]"
+                            src="https://assets.pancakeswap.finance/web/landing/trade-bunny.png" alt="">
+                        <div class="flex flex-col">
+                            <div class="text-[32px] mb-6 font-semibold leading-[110%] pl-3 text-colorsSecondary">
+                                Trade
+                            </div>
+                            
+
+                            <!-- div che contiene tutti gli svg prima card -->
+                            <div class="flex-nowrap gap-6 flex">
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative transition-[filter 0.25s linear 0s]">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 block relative z-[1] text-transparent h-auto max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-swap-purple.png"
+                                            alt="">
+                                        <img class="opacity-0 group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-current absolute top-0 left-0 z-[2] h-auto max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-swap.png" alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold text-xl leading-[110%]"> Swap
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]"> Trade
+                                            crypto instantly across multiple chains</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="text-textViolet leading-6 text-[16px] font-semibold group-hover:text-colorsPrimary transition-all ease-in-out delay-200">
+                                            Trade now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- seconda immagine prima card -->
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative ">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-liquidity-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-liquidity.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Liquidity </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px ]"> Fund
+                                            liquidity pools, earn trading fees </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold"> Add Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-bridge-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-bridge.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Bridge
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px ]">
+                                            Seamlessly
+                                            transfer assets across chains</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                            Bridge Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-perpetual-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-perpetual.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Perpetual
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]">Trade
+                                            endlessly without expiration dates</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold"> 
+                                            Trade now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-buy-crypto-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/trade-buy-crypto.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">Buy
+                                            Crypto</div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]">Buy
+                                            crypto
+                                            with your preferred currency and payment method</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                            Buy Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- inizio seconda card -->
+                
+                <div
+                    class="w-[1152px] rounded-3xl bg-gradient-to-r from-[#313d5c] to-[#3d2a54] box-border pt-12 pr-6 pb-6 min-h[360px] mt-12">
+                    <div class="gap-8 flex flex-row-reverse items-center">
+                        <img class="text-transparent mr-[-72px] h-[360px] w-[296px]"
+                        src="https://assets.pancakeswap.finance/web/landing/earn-bunny.png" alt="">
+                        <div class="flex flex-col">
+                            <div class="text-[32px] mb-6 font-semibold leading-[110%] pl-3 text-colorsSecondary">
+                                Earn
+                            </div>
+
+
+                            <!-- div che contiene tutti gli svg prima card -->
+                            <div class="flex-nowrap gap-6 flex h-[286px] w-[828px]">
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative transition-[filter 0.25s linear 0s]">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 block relative z-[1] text-transparent h-auto max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-farm-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-current absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-farm.png" alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold text-xl leading-[110%]"> Farm
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]"> 
+                                            Stake LP tokens, harvest CAKE </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold"> 
+                                            Stake now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- seconda immagine prima card -->
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative ">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-pools-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-pools.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Pools </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px ]"> 
+                                            Stake CAKE, earn various rewards </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold"> 
+                                            Stake Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-liquidity-staking-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-liquidity-staking.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Liquid Staking
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px ]">
+                                            Earn rewards while retaining asset flexibility
+                                            </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                            Add Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-fixed-staking-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-fixed-staking.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Simple Staking
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]">
+                                            Earn rewards hassle-free with single-sided staking
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                             Stake now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-full max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-pm-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-auto max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/earn-pm.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Position Manager</div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]">Buy
+                                            Automate your PancakeSwap v3 liquidity
+                                            </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                            Stake Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- inizio terza card -->
+                <div
+                    class="w-[1152px] rounded-3xl bg-gradient-to-r from-[#313d5c] to-[#3d2a54] box-border pt-12 pr-6 pb-6 min-h[360px] mt-12">
+                    <div class="gap-8 flex flex-row items-center">
+                        <img class="text-transparent ml-[-72px] h-[340px] w-[340px]"
+                            src="https://assets.pancakeswap.finance/web/landing/game-nft-bunny.png" alt="">
+                        <div class="flex flex-col">
+                            <div class="text-[32px] mb-6 font-semibold leading-[110%] pl-3 text-colorsSecondary">
+                                Game & NFT
+                            </div>
+
+
+                            <!-- div che contiene tutti gli svg prima card -->
+                            <div class="flex-nowrap gap-[24px] flex h-[286px] w-[828px]">
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative transition-[filter 0.25s linear 0s]">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 block relative z-[1] text-transparent h-[122px] max-w-full"
+                                            src="https://assets.pancakeswap.finance/web/landing/game-pancake-protectors-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-current absolute top-0 left-0 opacity-0 z-[2] h-[122px] max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/game-pancake-protectors.png" alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold text-xl leading-[110%]"> Gaming Marketplace
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]"> 
+                                            Play, Build and Connect on PancakeSwap</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                            Play Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- seconda immagine prima card -->
+                                
+                               
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-[122px] max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/game-prediction-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-[122px] max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/game-prediction.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            Prediction
+                                        </div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]">
+                                            Forecast token prices within minutes</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold"> 
+                                            Try now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 h-[286px] flex-nowrap p-3 justify-between flex-col flex-grow gap-3 cursor-pointer flex group">
+                                    <div class="relative">
+                                        <img class="group-hover:opacity-0 transition-all ease-in-out delay-200 text-transparent block relative z-[1] h-[122px] max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/nft-marketplace-purple.png"
+                                            alt="">
+                                        <img class="group-hover:opacity-100 transition-all ease-in-out delay-200 text-transparent fill-transparent absolute top-0 left-0 opacity-0 z-[2] h-[122px] max-w-full"
+                                        src="https://assets.pancakeswap.finance/web/landing/nft-marketplace.png"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <div class="text-colorWhite mb-2 font-semibold leading-[110%] text-xl">
+                                            NFT Marketplace</div>
+                                        <div class="text-colorWhite font-normal leading-[120%] text-[14px]">
+                                            Trade unique NFTs on BNB Chain
+                                            </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="group-hover:text-colorsPrimary transition-all ease-in-out delay-200 text-textViolet leading-6 text-[16px] font-semibold">
+                                            Trade Now
+                                        </div>
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                            class="self-center text-textViolet fill-current flex-shrink-0 box-border w-5 overflow-hidden">
+                                            <path
+                                                d="M9.29006 15.88L13.1701 12L9.29006 8.12001C8.90006 7.73001 8.90006 7.10001 9.29006 6.71001C9.68006 6.32001 10.3101 6.32001 10.7001 6.71001L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
