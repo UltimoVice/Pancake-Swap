@@ -36,6 +36,7 @@
                         'radial-gradient-card-1': 'radial-gradient(112.67% 197.53% at 30.75% 3.72%, rgb(154, 237, 255) 0%, rgb(204, 194, 254) 76.19%, rgb(198, 163, 255) 100%)',
                         'linear-gradient-card-1': 'linear-gradient(rgba(231, 253, 255, 0.2) 0%, rgba(242, 241, 255, 0.2) 100%)',
                         'radial-gradient-main': 'radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%)',
+                        'linear-connect': 'linear-gradient(166.77deg, #3b4155, #3a3045)',
                     }),
                     overflow: {
                         'overlay': 'overlay',
@@ -45,6 +46,7 @@
                         'settingsSwitch': '0px 0px 0px 1px #7645d9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)',
                         'shadowInset': 'inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)',
                         'telegram': '0px 2px 12px -8px rgba(25, 19, 38, .1), 0px 1px 1px rgba(25, 19, 38, .05)',
+                        'learnHow': 'rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset',
                     },
                 },
             },
@@ -65,6 +67,20 @@
         }
     </script>
     <style>
+        .space::after{
+            content: "";
+            display: block;
+            padding-top: 100%;
+            box-sizing: border-box;
+        }
+
+        .space2::after{
+            content: "";
+            display: block;
+            padding-top: 89.899%;
+            box-sizing: border-box;
+        }
+
         .custom-scrollbar::-webkit-scrollbar {
     width: 8px; 
     }
@@ -86,6 +102,18 @@
 
     .fade-out {
         animation: fadeOut 0.5s ease forwards;
+    }
+
+    .connect-ani {
+        animation: fadeIn 0.3s ease-in-out 0s 1 normal forwards running;
+    }
+
+    .connect-ani2 {
+        animation: fadeIn 350ms ease 0s 1 normal forwards running; 
+    }
+
+    .connect-ani3 {   
+        animation: auto ease 0s 1 normal none running none;
     }
 
     @keyframes fadeIn {
@@ -624,10 +652,15 @@
                                                         Get started with notifications from PancakeSwap. First authorize notifications by signing in your wallet
                                                     </div>
                                                     <div class="grid-flow-row gap-y-3 w-full mt-6 grid m-0 p-0 border-0 min-w-0 box-border align-baseline">
-                                                        <button class="relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 px-6 bg-colorsPrimary text-[#191326] h-[50px]">
-                                                            Connect Wallet
+                                                        <button id="connectWalletButton3"
+                                                            class="relative items-center border-0 rounded-2xl shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 h-[50px] px-6 bg-colorsPrimary hover:bg-[#228F8F] text-[#191326]">
+                                                            <div class="block">
+                                                                Connect Wallet
+                                                            </div>
+                                                            <div class="hidden">
+                                                                Connect
+                                                            </div>
                                                         </button>
-                                                        <!-- INSERIRE BOTTONE Connect Wallet --->
                                                     </div>
                                                 </div>
                                             </div>
@@ -701,7 +734,7 @@
                                     <!-- zkSync Era --->
                                     <button id="zkSync" class="justify-start cursor-pointer items-center border-[0px] text-[textViolet] flex text-base h-12 outline-0 px-4 w-full">
                                         <img src="https://assets.pancakeswap.finance/web/chains/324.png" class="text-transparent max-h-6 h-auto max-w-full"/>
-                                        <div class="text-colorWhite font-normal leading-6 pl-3 text-base">
+                                        <div class="text-colorsSecondary font-normal leading-6 pl-3 text-base">
                                             zkSync Era
                                         </div>
                                     </button>
@@ -744,7 +777,7 @@
                             </div>
                         </div>
                     </div>
-                    <button
+                    <button id="connectWalletButton"
                         class="relative items-center border-0 rounded-2xl shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 h-8 px-4 bg-colorsPrimary hover:bg-[#228F8F] text-[#191326]">
                         <div class="block">
                             Connect Wallet
@@ -1045,7 +1078,15 @@
                         <div class="text-colorWhite leading-6 mb-6 font-semibold text-center text-[40px]">
                             Join Everyone's Favorite DEX Now!
                         </div>
-                        <!-- inserire Connect Wallet Button --->
+                        <button id="connectWalletButton2"
+                            class="relative items-center border-0 rounded-2xl shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 h-12 px-6 bg-colorsPrimary hover:bg-[#228F8F] text-[#191326] mt-6">
+                            <div class="block">
+                                Connect Wallet
+                            </div>
+                            <div class="hidden">
+                                Connect
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1075,23 +1116,64 @@
                                             GLOBAL
                                         </div>
                                         <!-- Dark Mode --->
-                                        <div class="flex justify-between mb-6">
+                                        <div class="flex justify-between pb-6">
                                             <div class="text-colorWhite font-normal leading-6 text-base">
                                                 Dark mode
                                             </div>
-                                            <div class="items-center bg-[#666171] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative w-[56px]">
-                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
-                                                <div class="left-[calc(100%-30px)] bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] absolute top-[3px] transition-left duration-200 ease-in delay-0 w-[26px] z-[4] hover:shadow-settingsSwitch">
+                                            <div id="contDarkMode2" class="items-center bg-[#666171] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition duration-200 ease-in-out w-14">
+                                                <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]" />
+                                                <div id="buttonDarkMode2"
+                                                    class="left-[calc(100%-30px)] bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] absolute top-[3px] transition-left duration-200 ease-in delay-0 w-[26px] z-[4] hover:shadow-settingsSwitch">
                                                     <div class="flex items-center justify-center h-full">
-                                                        <svg viewBox="0 0 24 24" color="secondary" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-colorsSecondary shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z"></path></svg>
+                                                        <svg id="svgMoon2" viewBox="0 0 24 24" color="secondary" width="20px" xmlns="http://www.w3.org/2000/svg"
+                                                            class="self-center fill-current text-colorsSecondary shrink-0 absolute opacity-100">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg id="svgSun2" viewBox="0 0 24 24" color="warning" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#ffb237] shrink-0 opacity-0 absolute"><path d="M5.66 4.2L6.05 4.59C6.44 4.97 6.44 5.61 6.05 5.99L6.04 6C5.65 6.39 5.03 6.39 4.64 6L4.25 5.61C3.86 5.23 3.86 4.6 4.25 4.21L4.26 4.2C4.64 3.82 5.27 3.81 5.66 4.2Z"></path><path d="M1.99 10.95H3.01C3.56 10.95 4 11.39 4 11.95V11.96C4 12.51 3.56 12.95 3 12.94H1.99C1.44 12.94 1 12.5 1 11.95V11.94C1 11.39 1.44 10.95 1.99 10.95Z"></path><path d="M12 1H12.01C12.56 1 13 1.44 13 1.99V2.96C13 3.51 12.56 3.95 12 3.94H11.99C11.44 3.94 11 3.5 11 2.95V1.99C11 1.44 11.44 1 12 1Z"></path><path d="M18.34 4.2C18.73 3.82 19.36 3.82 19.75 4.21C20.14 4.6 20.14 5.22 19.75 5.61L19.36 6C18.98 6.39 18.35 6.39 17.96 6L17.95 5.99C17.56 5.61 17.56 4.98 17.95 4.59L18.34 4.2Z"></path><path d="M18.33 19.7L17.94 19.31C17.55 18.92 17.55 18.3 17.95 17.9C18.33 17.52 18.96 17.51 19.35 17.9L19.74 18.29C20.13 18.68 20.13 19.31 19.74 19.7C19.35 20.09 18.72 20.09 18.33 19.7Z"></path><path d="M20 11.95V11.94C20 11.39 20.44 10.95 20.99 10.95H22C22.55 10.95 22.99 11.39 22.99 11.94V11.95C22.99 12.5 22.55 12.94 22 12.94H20.99C20.44 12.94 20 12.5 20 11.95Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11.95C6 8.64 8.69 5.95 12 5.95C15.31 5.95 18 8.64 18 11.95C18 15.26 15.31 17.95 12 17.95C8.69 17.95 6 15.26 6 11.95ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"></path><path d="M12 22.9H11.99C11.44 22.9 11 22.46 11 21.91V20.95C11 20.4 11.44 19.96 11.99 19.96H12C12.55 19.96 12.99 20.4 12.99 20.95V21.91C12.99 22.46 12.55 22.9 12 22.9Z"></path><path d="M5.66 19.69C5.27 20.08 4.64 20.08 4.25 19.69C3.86 19.3 3.86 18.68 4.24 18.28L4.63 17.89C5.02 17.5 5.65 17.5 6.04 17.89L6.05 17.9C6.43 18.28 6.44 18.91 6.05 19.3L5.66 19.69Z"></path></svg>
                                                     </div>
                                                 </div>
                                                 <div class="flex justify-around items-center w-full h-full">
-                                                    <svg viewBox="0 0 24 24" color="backgroundAlt" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#27262c] shrink-0"><path d="M5.66 4.2L6.05 4.59C6.44 4.97 6.44 5.61 6.05 5.99L6.04 6C5.65 6.39 5.03 6.39 4.64 6L4.25 5.61C3.86 5.23 3.86 4.6 4.25 4.21L4.26 4.2C4.64 3.82 5.27 3.81 5.66 4.2Z"></path><path d="M1.99 10.95H3.01C3.56 10.95 4 11.39 4 11.95V11.96C4 12.51 3.56 12.95 3 12.94H1.99C1.44 12.94 1 12.5 1 11.95V11.94C1 11.39 1.44 10.95 1.99 10.95Z"></path><path d="M12 1H12.01C12.56 1 13 1.44 13 1.99V2.96C13 3.51 12.56 3.95 12 3.94H11.99C11.44 3.94 11 3.5 11 2.95V1.99C11 1.44 11.44 1 12 1Z"></path><path d="M18.34 4.2C18.73 3.82 19.36 3.82 19.75 4.21C20.14 4.6 20.14 5.22 19.75 5.61L19.36 6C18.98 6.39 18.35 6.39 17.96 6L17.95 5.99C17.56 5.61 17.56 4.98 17.95 4.59L18.34 4.2Z"></path><path d="M18.33 19.7L17.94 19.31C17.55 18.92 17.55 18.3 17.95 17.9C18.33 17.52 18.96 17.51 19.35 17.9L19.74 18.29C20.13 18.68 20.13 19.31 19.74 19.7C19.35 20.09 18.72 20.09 18.33 19.7Z"></path><path d="M20 11.95V11.94C20 11.39 20.44 10.95 20.99 10.95H22C22.55 10.95 22.99 11.39 22.99 11.94V11.95C22.99 12.5 22.55 12.94 22 12.94H20.99C20.44 12.94 20 12.5 20 11.95Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11.95C6 8.64 8.69 5.95 12 5.95C15.31 5.95 18 8.64 18 11.95C18 15.26 15.31 17.95 12 17.95C8.69 17.95 6 15.26 6 11.95ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"></path><path d="M12 22.9H11.99C11.44 22.9 11 22.46 11 21.91V20.95C11 20.4 11.44 19.96 11.99 19.96H12C12.55 19.96 12.99 20.4 12.99 20.95V21.91C12.99 22.46 12.55 22.9 12 22.9Z"></path><path d="M5.66 19.69C5.27 20.08 4.64 20.08 4.25 19.69C3.86 19.3 3.86 18.68 4.24 18.28L4.63 17.89C5.02 17.5 5.65 17.5 6.04 17.89L6.05 17.9C6.43 18.28 6.44 18.91 6.05 19.3L5.66 19.69Z"></path></svg>
-                                                    <svg viewBox="0 0 24 24" color="backgroundAlt" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#27262c] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z"></path></svg>
-                                                </div>
+                                                    <svg viewBox="0 0 24 24" color="backgroundAlt" width="20px" xmlns="http://www.w3.org/2000/svg"
+                                                        class="self-center fill-current text-[#27262c] shrink-0">
+                                                        <path
+                                                            d="M5.66 4.2L6.05 4.59C6.44 4.97 6.44 5.61 6.05 5.99L6.04 6C5.65 6.39 5.03 6.39 4.64 6L4.25 5.61C3.86 5.23 3.86 4.6 4.25 4.21L4.26 4.2C4.64 3.82 5.27 3.81 5.66 4.2Z">
+                                                        </path>
+                                                        <path
+                                                            d="M1.99 10.95H3.01C3.56 10.95 4 11.39 4 11.95V11.96C4 12.51 3.56 12.95 3 12.94H1.99C1.44 12.94 1 12.5 1 11.95V11.94C1 11.39 1.44 10.95 1.99 10.95Z">
+                                                        </path>
+                                                        <path
+                                                            d="M12 1H12.01C12.56 1 13 1.44 13 1.99V2.96C13 3.51 12.56 3.95 12 3.94H11.99C11.44 3.94 11 3.5 11 2.95V1.99C11 1.44 11.44 1 12 1Z">
+                                                        </path>
+                                                        <path
+                                                            d="M18.34 4.2C18.73 3.82 19.36 3.82 19.75 4.21C20.14 4.6 20.14 5.22 19.75 5.61L19.36 6C18.98 6.39 18.35 6.39 17.96 6L17.95 5.99C17.56 5.61 17.56 4.98 17.95 4.59L18.34 4.2Z">
+                                                        </path>
+                                                        <path
+                                                            d="M18.33 19.7L17.94 19.31C17.55 18.92 17.55 18.3 17.95 17.9C18.33 17.52 18.96 17.51 19.35 17.9L19.74 18.29C20.13 18.68 20.13 19.31 19.74 19.7C19.35 20.09 18.72 20.09 18.33 19.7Z">
+                                                        </path>
+                                                        <path
+                                                            d="M20 11.95V11.94C20 11.39 20.44 10.95 20.99 10.95H22C22.55 10.95 22.99 11.39 22.99 11.94V11.95C22.99 12.5 22.55 12.94 22 12.94H20.99C20.44 12.94 20 12.5 20 11.95Z">
+                                                        </path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M6 11.95C6 8.64 8.69 5.95 12 5.95C15.31 5.95 18 8.64 18 11.95C18 15.26 15.31 17.95 12 17.95C8.69 17.95 6 15.26 6 11.95ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z">
+                                                        </path>
+                                                        <path
+                                                            d="M12 22.9H11.99C11.44 22.9 11 22.46 11 21.91V20.95C11 20.4 11.44 19.96 11.99 19.96H12C12.55 19.96 12.99 20.4 12.99 20.95V21.91C12.99 22.46 12.55 22.9 12 22.9Z">
+                                                        </path>
+                                                        <path
+                                                            d="M5.66 19.69C5.27 20.08 4.64 20.08 4.25 19.69C3.86 19.3 3.86 18.68 4.24 18.28L4.63 17.89C5.02 17.5 5.65 17.5 6.04 17.89L6.05 17.9C6.43 18.28 6.44 18.91 6.05 19.3L5.66 19.69Z">
+                                                        </path>
+                                                    </svg>
+                                                    <svg viewBox="0 0 24 24" color="backgroundAlt" width="20px" xmlns="http://www.w3.org/2000/svg"
+                                                        class="self-center fill-current text-[#27262c] shrink-0">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z">
+                                                        </path>
+                                                    </svg>
+                                                </div>              
                                             </div>
-                                        </div>
+                                        </div>    
                                         <!-- Subgraph Health Indicator --->
                                         <div class="flex justify-between items-center mb-6">
                                             <div class="flex items-center">
@@ -1104,9 +1186,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                            <div id="contSubgraphHealthIndicator" class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
                                                 <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
-                                                <div class="hover:shadow-settingsSwitch bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[3px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4]"></div>
+                                                <div id="buttonSubgraphHealthIndicator" class="hover:shadow-settingsSwitch bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] left-[calc(100%-52px)]"></div>
                                             </div>
                                         </div>
                                         <!-- Show username --->
@@ -1121,9 +1203,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                            <div id="contShowUsername" class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
                                                 <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
-                                                <div class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[3px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] hover:shadow-settingsSwitch"></div>
+                                                <div id="buttonShowUsername" class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[calc(100%-52px)] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] hover:shadow-settingsSwitch"></div>
                                             </div>
                                         </div>
                                         <!-- Allow notifications --->
@@ -1141,9 +1223,9 @@
                                                     BETA
                                                 </div>
                                             </div>
-                                            <div class="items-center bg-[#31d0aa] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                            <div id="contAllowNotifications" class="items-center bg-[#31d0aa] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
                                                 <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
-                                                <div class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[calc(100%-30px)] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] hover:shadow-settingsSwitch"></div>
+                                                <div id="buttonAllowNotifications" class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[calc(100%-30px)] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] hover:shadow-settingsSwitch"></div>
                                             </div>
                                         </div>
                                         <!-- Show testnet --->
@@ -1153,9 +1235,9 @@
                                                     Show testnet
                                                 </div>
                                             </div>
-                                            <div class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
+                                            <div id="contShowTestnet" class="items-center bg-[#372f47] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition-colors duration-200 ease w-14">
                                                 <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]"/>
-                                                <div class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[3px] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] hover:shadow-settingsSwitch"></div>
+                                                <div id="buttonShowTestnet" class="bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] left-[calc(100%-52px)] absolute top-[3px] transition-left duration-200 ease-in w-[26px] z-[4] hover:shadow-settingsSwitch"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1180,28 +1262,28 @@
                         ECOSYSTEM
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Trade</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Trade</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Earn</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Earn</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Game</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Game</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">NFT</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">NFT</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Tokenomics</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Tokenomics</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Litepaper</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Litepaper</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">CAKE Emission Projection</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">CAKE Emission Projection</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Merchandise</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Merchandise</a>
                     </li>
                 </ul>
                 <ul class="mb-0 list-none">
@@ -1209,13 +1291,13 @@
                         BUSINESS
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Farms And Syrup Pools</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Farms And Syrup Pools</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">IFO</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">IFO</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">NFT Marketplace</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">NFT Marketplace</a>
                     </li>
                 </ul>
                 <ul class="mb-0 list-none">
@@ -1223,13 +1305,13 @@
                         DEVELOPERS
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Contributing</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Contributing</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Github</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Github</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Bug Bounty</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Bug Bounty</a>
                     </li>
                 </ul>
                 <ul class="mb-0 list-none">
@@ -1237,13 +1319,13 @@
                         SUPPORT
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Contact</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Contact</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Troubleshooting</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Troubleshooting</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Documentation</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Documentation</a>
                     </li>
                 </ul>
                 <ul class="mb-0 list-none">
@@ -1251,16 +1333,16 @@
                         ABOUT
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Terms Of Service</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Terms Of Service</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Blog</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Blog</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Brand Assets</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Brand Assets</a>
                     </li>
                     <li class="font-semibold text-base mb-2">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base">Careers</a>
+                        <a href="" class="flex font-semibold items-center w-fit text-colorWhite leading-6 text-base hover:underline">Careers</a>
                     </li>
                 </ul>
                 <div class="block">
@@ -1273,55 +1355,55 @@
                     <svg viewBox="0 0 18 15" width="20px" color="textSubtle" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer self-center fill-current text-textViolet shrink-0" style="cursor: pointer;"><path d="M5.659 15c6.79 0 10.507-5.766 10.507-10.763 0-.16 0-.32-.01-.49A7.578 7.578 0 0018 1.79c-.663.3-1.376.5-2.127.6a3.824 3.824 0 001.63-2.1c-.713.44-1.503.75-2.352.92A3.6 3.6 0 0012.46 0C10.419 0 8.76 1.699 8.76 3.787c0 .3.039.58.098.86-3.064-.15-5.786-1.669-7.61-3.957A3.858 3.858 0 00.75 2.598c0 1.31.654 2.469 1.64 3.148a3.638 3.638 0 01-1.669-.47v.05c0 1.83 1.278 3.368 2.956 3.708-.312.09-.634.13-.976.13-.234 0-.468-.02-.692-.07.468 1.509 1.834 2.598 3.453 2.628a7.284 7.284 0 01-4.585 1.62c-.293 0-.595-.01-.878-.05A10.206 10.206 0 005.659 15z"></path></svg>
                 </a>
                 <!-- Telegram --->
-                <div class="relative">
+                <div id="toggleTelegram"  class="relative">
                     <svg viewBox="0 0 20 20" width="20px" color="textSubtle" mr="24px" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer self-center fill-current text-textViolet shrink-0 mr-6" style="cursor: pointer;"><path d="M10 0C4.478 0 0 4.478 0 9.99 0 15.511 4.478 20 10 20s10-4.488 10-10.01C20 4.477 15.522 0 10 0zm4.925 6.28c-.064.927-1.78 7.856-1.78 7.856s-.107.406-.48.416a.644.644 0 01-.49-.192c-.395-.33-1.29-.97-2.132-1.556a.953.953 0 01-.107.096c-.192.17-.48.416-.789.714a10.7 10.7 0 00-.373.352l-.01.01a2.214 2.214 0 01-.193.171c-.415.341-.458.053-.458-.096l.224-2.441v-.021l.01-.022c.011-.032.033-.043.033-.043s4.36-3.88 4.477-4.296c.01-.021-.021-.042-.074-.021-.288.096-5.31 3.273-5.864 3.625-.032.02-.128.01-.128.01l-2.441-.8s-.288-.117-.192-.383c.021-.053.053-.107.17-.181.544-.384 10-3.785 10-3.785s.267-.085.427-.032c.074.032.117.064.16.17.01.043.021.128.021.224 0 .054-.01.118-.01.224z"></path></svg>
-                    <div class="w-max flex flex-col absolute transform -translate-x-1/2 left-[50%] bottom-full bg-[#27262c] shadow-telegram p-4 max-h-0 overflow-hidden z-10 rounded-[4px] opacity-0 will-change-auto pointer-events-none">
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                    <div id="windowTelegram" class="w-max flex flex-col absolute transform -translate-x-1/2 left-[50%] bottom-full bg-[#27262c] shadow-telegram p-4 max-h-[380px] overflow-y-auto z-10 rounded-[4px] opacity-0 will-change-auto pointer-events-none custom-scrollbar">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             English
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Bahasa Indonesia
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             中文
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Tiếng Việt
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Italiano
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             русский
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Türkiye
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Português
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Español
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             日本語
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Français
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Deutsch
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Filipino
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             ქართული ენა
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             हिन्दी
                         </a>
-                        <a href="" class="flex font-semibold items-center w-fit text-colorViolet leading-6 text-base">
+                        <a href="" class="flex font-semibold items-center w-fit text-textViolet leading-6 text-base hover:underline">
                             Announcements
                         </a>
                     </div>
@@ -1350,17 +1432,18 @@
             <div class="border-y-0 p-0 mb-0 border-[#383241] border-solid order-3 flex-row flex justify-between">
                 <div class="order-1 flex items-center">
                     <!-- Dark Mode --->
-                    <div class="items-center bg-[#666171] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition duration-200 ease-in-out w-14">
+                    <div id="contDarkMode" class="items-center bg-[#666171] rounded-3xl shadow-shadowInset cursor-pointer inline-flex h-8 relative transition duration-200 ease-in-out w-14">
                         <input type="checkbox" class="cursor-pointer opacity-0 h-full absolute w-full z-[3]" />
-                        <div
+                        <div id="buttonDarkMode"
                             class="left-[calc(100%-30px)] bg-[#27262c] rounded-[50%] cursor-pointer h-[26px] absolute top-[3px] transition-left duration-200 ease-in delay-0 w-[26px] z-[4] hover:shadow-settingsSwitch">
                             <div class="flex items-center justify-center h-full">
-                                <svg viewBox="0 0 24 24" color="secondary" width="20px" xmlns="http://www.w3.org/2000/svg"
-                                    class="self-center fill-current text-colorsSecondary shrink-0">
+                                <svg id="svgMoon" viewBox="0 0 24 24" color="secondary" width="20px" xmlns="http://www.w3.org/2000/svg"
+                                    class="self-center fill-current text-colorsSecondary shrink-0 absolute opacity-100">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M4.1534 13.6089L4.15362 13.61C4.77322 16.8113 7.42207 19.3677 10.647 19.8853L10.6502 19.8858C13.0412 20.2736 15.2625 19.6103 16.9422 18.2833C11.3549 16.2878 7.9748 10.3524 9.26266 4.48816C5.69846 5.77194 3.35817 9.51245 4.1534 13.6089ZM10.0083 2.21054C4.76622 3.2533 1.09895 8.36947 2.19006 13.9901C2.97006 18.0201 6.28006 21.2101 10.3301 21.8601C13.8512 22.4311 17.0955 21.1608 19.2662 18.8587C19.2765 18.8478 19.2866 18.837 19.2968 18.8261C19.4385 18.6745 19.5757 18.5184 19.7079 18.3581C19.7105 18.355 19.713 18.3519 19.7156 18.3487C19.8853 18.1426 20.0469 17.9295 20.2001 17.7101C20.4101 17.4001 20.2401 16.9601 19.8701 16.9201C19.5114 16.8796 19.1602 16.8209 18.817 16.7452C18.7964 16.7406 18.7758 16.736 18.7552 16.7313C18.6676 16.7114 18.5804 16.6903 18.4938 16.6681C18.4919 16.6676 18.4901 16.6672 18.4882 16.6667C13.0234 15.2647 9.72516 9.48006 11.4542 4.03417C11.4549 4.03214 11.4555 4.03012 11.4562 4.0281C11.4875 3.92954 11.5205 3.83109 11.5552 3.73278C11.5565 3.72911 11.5578 3.72543 11.5591 3.72175C11.6768 3.38921 11.8136 3.05829 11.9701 2.73005C12.1301 2.39005 11.8501 2.01005 11.4701 2.03005C11.1954 2.04379 10.924 2.06848 10.6561 2.10368C10.6517 2.10427 10.6472 2.10486 10.6428 2.10545C10.4413 2.13221 10.2418 2.16492 10.0446 2.2034C10.0325 2.20576 10.0204 2.20814 10.0083 2.21054Z">
                                     </path>
                                 </svg>
+                                <svg id="svgSun" viewBox="0 0 24 24" color="warning" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#ffb237] shrink-0 opacity-0 absolute"><path d="M5.66 4.2L6.05 4.59C6.44 4.97 6.44 5.61 6.05 5.99L6.04 6C5.65 6.39 5.03 6.39 4.64 6L4.25 5.61C3.86 5.23 3.86 4.6 4.25 4.21L4.26 4.2C4.64 3.82 5.27 3.81 5.66 4.2Z"></path><path d="M1.99 10.95H3.01C3.56 10.95 4 11.39 4 11.95V11.96C4 12.51 3.56 12.95 3 12.94H1.99C1.44 12.94 1 12.5 1 11.95V11.94C1 11.39 1.44 10.95 1.99 10.95Z"></path><path d="M12 1H12.01C12.56 1 13 1.44 13 1.99V2.96C13 3.51 12.56 3.95 12 3.94H11.99C11.44 3.94 11 3.5 11 2.95V1.99C11 1.44 11.44 1 12 1Z"></path><path d="M18.34 4.2C18.73 3.82 19.36 3.82 19.75 4.21C20.14 4.6 20.14 5.22 19.75 5.61L19.36 6C18.98 6.39 18.35 6.39 17.96 6L17.95 5.99C17.56 5.61 17.56 4.98 17.95 4.59L18.34 4.2Z"></path><path d="M18.33 19.7L17.94 19.31C17.55 18.92 17.55 18.3 17.95 17.9C18.33 17.52 18.96 17.51 19.35 17.9L19.74 18.29C20.13 18.68 20.13 19.31 19.74 19.7C19.35 20.09 18.72 20.09 18.33 19.7Z"></path><path d="M20 11.95V11.94C20 11.39 20.44 10.95 20.99 10.95H22C22.55 10.95 22.99 11.39 22.99 11.94V11.95C22.99 12.5 22.55 12.94 22 12.94H20.99C20.44 12.94 20 12.5 20 11.95Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6 11.95C6 8.64 8.69 5.95 12 5.95C15.31 5.95 18 8.64 18 11.95C18 15.26 15.31 17.95 12 17.95C8.69 17.95 6 15.26 6 11.95ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"></path><path d="M12 22.9H11.99C11.44 22.9 11 22.46 11 21.91V20.95C11 20.4 11.44 19.96 11.99 19.96H12C12.55 19.96 12.99 20.4 12.99 20.95V21.91C12.99 22.46 12.55 22.9 12 22.9Z"></path><path d="M5.66 19.69C5.27 20.08 4.64 20.08 4.25 19.69C3.86 19.3 3.86 18.68 4.24 18.28L4.63 17.89C5.02 17.5 5.65 17.5 6.04 17.89L6.05 17.9C6.43 18.28 6.44 18.91 6.05 19.3L5.66 19.69Z"></path></svg>
                             </div>
                         </div>
                         <div class="flex justify-around items-center w-full h-full">
@@ -1491,6 +1574,330 @@
         </div>
     </div>
     <!-- FINE FOOTER --->
+    <!-- INIZIO FINESTRA CONNECT WALLET --->
+    <div id="windowConnectWallet" class="relative z-[200] opacity-0 pointer-events-none transition-[200ms]">
+        <div role="dialog" class="">
+            <div class="transform translate-x-0 connect-ani flex flex-col justify-center items-center fixed inset-0 z-[99] will-change-auto opacity-0">
+                <div id="whiteConnectWallet" role="presentation" class="fixed top-0 left-0 w-full h-full bg-[#f4eeff99] z-20 will-change-auto connect-ani2">
+
+                </div>
+                <div class="overflow-visible connect-ani3 w-auto bottom-auto rounded-[32px] max-h-[100vh] bg-[#27262c] shadow-settingsBox border-[1px] border-solid border-[#383241] z-[100] absolute min-h-[300px] max-w-none">
+                    <div class="overflow-visible border-none rounded-[32px]">
+                        <div class="relative m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                            <div class="w-[792px] h-[490px] mb-0 flexz-[100] relative m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                <div class="top-[-50px] left-4 absolute m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                    <div class="border-b-0 overflow-x-auto pt-4 pr-4 flex">
+                                        <div class="grow-0 justify-between flex">
+                                            <button id="connectWindow" class="grow-0 inline-flex justify-center cursor-pointer border-0 outline-0 p-2 rounded-t-2xl text-base font-semibold text-textViolet bg-[#372f47]">
+                                                Connect Wallet
+                                            </button>
+                                            <button id="whatsNew" class="ml-0 grow-0 inline-flex justify-center cursor-pointer border-0 outline-0 p-2 rounded-t-2xl text-base font-semibold text-[#372f47] bg-textViolet">
+                                                What’s a Web3 Wallet?
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Prima scheda --->
+                                <div id="firstForm" class="rounded-b-3xl bg-linear-connect rounded-3xl z-[100] w-full absolute flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                    <div class="max-w-[408px] bg-[#27262c] rounded-3xl z-[100] py-8 flex-col flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                        <div class="px-12 m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                            <h4 class="text-xl font-semibold leading-[1.1rem] text-colorWhite">
+                                                Connect Wallet
+                                            </h4>
+                                            <div class="text-textViolet font-normal leading-6 pt-6 pb-8 text-sm">
+                                                Start by connecting with one of the wallets below. Be sure to store your private keys or seed phrase securely. Never share them with anyone.
+                                            </div>
+                                        </div>
+                                        <div class="grid-cols-3 gap-y-6 gap-x-4 px-12 pb-3 overflow-x-hidden overflow-y-auto grid m-0 p-0 border-0 min-w-0 box-border align-baseline custom-scrollbar max-h-[300px]">
+                                            <!-- Metamask --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/metamask.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Metamask
+                                                </div>
+                                            </div>
+                                            <!-- Binance Web3 Wallet --->
+                                            <div class="hover:opacity-60  justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/binance-w3w.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Binance Web3 Wallet
+                                                </div>
+                                            </div>
+                                            <!-- Binance Wallet --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/binance.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Binance Wallet
+                                                </div>
+                                            </div>
+                                            <!-- Coinbase Wallet --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/coinbase.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Coinbase Wallet
+                                                </div>
+                                            </div>
+                                            <!-- Trust Wallet --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/trust.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Trust Wallet
+                                                </div>
+                                            </div>
+                                            <!-- WalletConnect --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/walletconnect.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    WalletConnect
+                                                </div>
+                                            </div>
+                                            <!-- Opera Wallet --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/opera.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Opera Wallet
+                                                </div>
+                                            </div>
+                                            <!-- Brave Wallet --->
+                                            <div class="hover:opacity-60 justify-start tracking-normal p-0 relative items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-100 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/brave.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Brave Wallet
+                                                </div>
+                                            </div>
+                                            <!-- More --->
+                                            <div id="more" class="pointer-events-auto hover:opacity-60 justify-center items-center flex-col flex m-0 p-0 border-0 min-w-0 box-border align-baseline opacity-100">
+                                                <div class="relative items-center border-0 rounded-2xl cursor-pointer inline-flex text-base font-semibold justify-center tracking-[0.03em] leading-4 opacity-100 outline-0 transition duration-200 ease-in-out px-6 bg-transparent text-colorsPrimary shadow-none h-auto flex-col min-w-0 box-border align-baseline">
+                                                    <div class="w-[50px] h-[50px] rounded-xl bg-[#1e1d20] justify-center items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <svg viewBox="0 0 24 24" color="text" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-colorWhite shrink-0"><path d="M6 10C4.9 10 4 10.9 4 12C4 13.1 4.9 14 6 14C7.1 14 8 13.1 8 12C8 10.9 7.1 10 6 10ZM18 10C16.9 10 16 10.9 16 12C16 13.1 16.9 14 18 14C19.1 14 20 13.1 20 12C20 10.9 19.1 10 18 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"></path></svg>
+                                                    </div>
+                                                    <div class="text-colorWhite font-normal leading-6 mt-1 text-xs text-center">
+                                                        More
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Rabby Wallet --->
+                                            <div id="rabbyWallet" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/rabby.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Rabby Wallet
+                                                </div>
+                                            </div>
+                                            <!-- MathWallet --->
+                                            <div id="mathWallet" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/mathwallet.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    MathWallet
+                                                </div>
+                                            </div>
+                                            <!-- TokenPocket --->
+                                            <div id="tokenPocket" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/tokenpocket.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    TokenPocket
+                                                </div>
+                                            </div>
+                                            <!-- SafePal --->
+                                            <div id="safePal" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/safepal.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    SafePal
+                                                </div>
+                                            </div>
+                                            <!-- Coin98 --->
+                                            <div id="coin98" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/coin98.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Coin98
+                                                </div>
+                                            </div>
+                                            <!-- Blocto --->
+                                            <div id="blocto" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/blocto.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Blocto
+                                                </div>
+                                            </div>
+                                            <!-- CyberWallet --->
+                                            <div id="cyberWallet" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/cyberwallet.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    CyberWallet
+                                                </div>
+                                            </div>
+                                            <!-- Ledger --->
+                                            <div id="ledger" class="pointer-events-none hover:opacity-60 justify-start tracking-normal p-0 absolute items-center border-0 rounded-2xl cursor-pointer text-base font-semibold leading-4 opacity-0 outline-0 transition-all duration-200 ease-in-out bg-transparent text-colorsPrimary shadow-none h-auto flex flex-col m-0 min-w-0 box-border align-baseline">
+                                                <div class="rounded-xl p-[2px] mb-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                    <div class="rounded-[13px] w-[50px] h-[50px] bg-[#1e1d20] justify-center relative overflow-hidden items-center flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                                        <div class="max-h-[50px] max-w-[50px] relative w-full space">
+                                                            <img src="https://assets.pancakeswap.finance/web/wallets/ledger.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-colorWhite font-normal leading-6 text-xs text-center">
+                                                    Ledger
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-1 mx-6 justify-center items-center flex-col m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                        <div class="gap-6 text-center items-center flex-col flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                            <h1 class="text-xl font-semibold leading-[1.1em] text-colorsSecondary">
+                                                Haven’t got a wallet yet?
+                                            </h1>
+                                            <div class="max-h-[178px] max-w-[198px] relative w-full space2">
+                                                <img src="https://cdn.pancakeswap.com/wallets/wallet_intro.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                            </div>
+                                            <a href="" class="hover:opacity-60 hover:underline flex font-semibold items-center w-fit text-[#27262c] leading-6 text-base relative border-0 rounded-2xl learnHow cursor-pointer justify-center tracking-[0.03em] opacity-100 outline-0 transition-all duration-200 ease-in-out h-12 px-6 bg-textViolet no-underline">
+                                                Learn How to Connect
+                                                <svg viewBox="0 0 24 24" color="backgroundAlt" ml="4px" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#27262c] shrink-0 ml-1"><path d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z"></path></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Seconda scheda --->
+                                <div id="secondForm" class="rounded-b-3xl bg-linear-connect rounded-3xl z-[99] w-full h-[510px] absolute flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                    <div class="gap-6 w-full my-12 mr-auto ml-auto text-center items-center flex-col flex p-0 border-0 min-w-0 box-border align-baseline">
+                                        <div id="changeWindowConnect" class="w-full ml-0 mr-0 touch-pan-y relative overflow-hidden list-none p-0 z-[1] block">
+                                            <div class="relative w-full h-full z-[1] flex box-content">
+                                                <div class="w-[792px] shrink-0 h-full relative block">
+                                                    <h2 class="text-xl font-semibold leading-[1.1rem] text-colorsSecondary">Your first step in the DeFi world</h2>
+                                                    <div class="max-h-[178px] max-w-[198px] relative w-full m-auto space2">
+                                                        <img src="https://cdn.pancakeswap.com/wallets/wallet_intro.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                    </div>
+                                                    <div class="text-textViolet font-normal leading-6 m-auto max-w-[368px] text-sm">
+                                                        A Web3 Wallet allows you to send and receive crypto assets like bitcoin, BNB, ETH, NFTs and much more.
+                                                    </div>
+                                                </div>
+                                                <div class="w-[792px] shrink-0 h-full relative block">
+                                                    <h2 class="text-xl font-semibold leading-[1.1rem] text-colorsSecondary">
+                                                        Login using a wallet connection
+                                                    </h2>
+                                                    <div class="max-h-[178px] max-w-[198px] relative w-full m-auto space2">
+                                                        <img src="https://cdn.pancakeswap.com/wallets/world_lock.png" alt="" class="h-full left-0 absolute top-0 w-full max-w-full"/>
+                                                    </div>
+                                                    <div class="text-textViolet font-normal leading-6 m-auto max-w-[368px] text-sm">
+                                                        Instead of setting up new accounts and passwords for every website, simply set up your wallet in one go, and connect it to your favorite DApps.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex m-0 p-0 border-0 min-w-0 box-border align-baseline">
+                                            <div class="cursor-pointer p-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                <div id="buttonLeftConnect" class="bg-colorsSecondary rounded-l-3xl w-14 h-2 m-0 p-0 border-0 min-w-0 box-border align-baseline">
+
+                                                </div>
+                                            </div>
+                                            <div class="cursor-pointer p-1 m-0 border-0 min-w-0 box-border align-baseline">
+                                                <div id="buttonRightConnect" class="bg-[#262130] rounded-r-3xl w-14 h-2 m-0 p-0 border-0 min-w-0 box-border align-baseline">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="" class="hover:opacity-60 hover:underline flex font-semibold items-center w-fit text-[#27262c] leading-6 text-base relative border-0 rounded-2xl learnHow cursor-pointer justify-center tracking-[0.03em] opacity-100 outline-0 transition-all duration-200 ease-in-out h-12 px-6 bg-textViolet no-underline">
+                                            Learn How to Connect
+                                            <svg viewBox="0 0 24 24" color="backgroundAlt" ml="4px" width="20px" xmlns="http://www.w3.org/2000/svg" class="self-center fill-current text-[#27262c] shrink-0 ml-1"><path d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z"></path></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FINE FINESTRA CONNECT WALLET --->
 </body>
 
 </html>

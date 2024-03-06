@@ -152,7 +152,6 @@ const languageItems = [
     { id: '#lingua26', show: colorLanguage, hide: colorLanguage },
     { id: '#lingua27', show: colorLanguage, hide: colorLanguage },
     { id: '#lingua28', show: colorLanguage, hide: colorLanguage },
-
     { id: '#lingua1-2', show: colorLanguage, hide: colorLanguage },
     { id: '#lingua2-2', show: colorLanguage, hide: colorLanguage },
     { id: '#lingua3-2', show: colorLanguage, hide: colorLanguage },
@@ -195,15 +194,18 @@ languageItems.forEach(item => {
 const toggleSettings = (id) => {
     const menu = document.querySelector(id);
     if (menu.classList.contains('fade-in')) {
-        menu.classList.toggle('fade-in');
-        menu.classList.toggle('fade-out');
+        menu.classList.remove('fade-in');
+        menu.classList.add('fade-out');
+        menu.classList.add('pointer-events-none');
+        menu.classList.remove('pointer-events-auto');
     } else if (menu.classList.contains('fade-out')) {
-        menu.classList.toggle('fade-out');
+        menu.classList.remove('fade-out');
+        menu.classList.add('pointer-events-auto');
     } else {
-        menu.classList.toggle('fade-in');
+        menu.classList.add('fade-in');
+        menu.classList.remove('pointer-events-none');
+        menu.classList.add('pointer-events-auto');
     }
-    menu.classList.toggle('pointer-events-none');
-    menu.classList.toggle('pointer-events-auto');
 };
 
 
@@ -228,7 +230,7 @@ const toggleNotification = (id) => {
 
 const addNotificationClick = (elementId, menuId) => {
     const element = document.getElementById(elementId);
-    element.addEventListener('click', () => toggleSettings(menuId));
+    element.addEventListener('click', () => toggleNotification(menuId));
 };
 
 addNotificationClick('toggleNotification', '#windowNotification');
@@ -266,5 +268,204 @@ moveRightButton.addEventListener("click", function () {
 });
 
 
+// Underline Footer
+const toggleTelegram = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('opacity-100');
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('pointer-events-auto');
+};
+
+const addTelegramMenu = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('mouseover', () => toggleTelegram(menuId));
+    element.addEventListener('mouseout', () => toggleTelegram(menuId));
+};
+
+addTelegramMenu('toggleTelegram', '#windowTelegram');
 
 
+// Sposta bottone Dark Mode
+const toggleDark = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('left-[calc(100%-30px)]');
+    menu.classList.toggle('left-[calc(100%-52px)]');
+};
+
+const changeDark = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleDark(menuId));
+};
+
+changeDark('contDarkMode', '#buttonDarkMode');
+
+changeDark('contDarkMode2', '#buttonDarkMode2');
+
+changeDark('contSubgraphHealthIndicator', '#buttonSubgraphHealthIndicator');
+changeDark('contShowUsername', '#buttonShowUsername');
+changeDark('contAllowNotifications', '#buttonAllowNotifications');
+changeDark('contShowTestnet', '#buttonShowTestnet');
+
+
+// Cambio SVG Dark Mode
+const toggleSVG = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('opacity-100');
+};
+
+const changeSVG = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleSVG(menuId));
+};
+
+changeSVG('contDarkMode', '#svgMoon');
+changeSVG('contDarkMode', '#svgSun');
+
+changeSVG('contDarkMode2', '#svgMoon2');
+changeSVG('contDarkMode2', '#svgSun2');
+
+
+// Cambio Bg Button
+const toggleAqua = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('bg-[#372f47]');
+    menu.classList.toggle('bg-[#31d0aa]');
+};
+
+const changeBgAqua = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleAqua(menuId));
+};
+
+changeBgAqua('contSubgraphHealthIndicator', '#contSubgraphHealthIndicator');
+changeBgAqua('contShowUsername', '#contShowUsername');
+changeBgAqua('contAllowNotifications', '#contAllowNotifications');
+changeBgAqua('contShowTestnet', '#contShowTestnet');
+
+
+// More Connect Wallet
+const toggleMore = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('opacity-100');
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('pointer-events-none');
+    menu.classList.toggle('pointer-events-auto');
+    menu.classList.toggle('relative');
+    menu.classList.toggle('absolute');
+};
+
+const addMore = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleMore(menuId));
+    element.addEventListener('click', () => {
+        element.remove()
+    })
+};
+
+addMore('more', '#rabbyWallet');
+addMore('more', '#mathWallet');
+addMore('more', '#tokenPocket');
+addMore('more', '#safePal');
+addMore('more', '#coin98');
+addMore('more', '#blocto');
+addMore('more', '#cyberWallet');
+addMore('more', '#ledger');
+
+
+// Switch Connect
+const toggleConnect = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('z-[100]');
+    menu.classList.toggle('z-[99]');
+};
+
+const changeConnect = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleConnect(menuId));
+};
+
+changeConnect('connectWindow', '#firstForm');
+changeConnect('whatsNew', '#firstForm');
+
+
+// Switch color connect window
+const toggleColorUp = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('text-[#372f47]');
+    menu.classList.toggle('text-textViolet');
+    menu.classList.toggle('bg-[#372f47]');
+    menu.classList.toggle('bg-textViolet');
+};
+
+const changeColorUp = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleColorUp(menuId));
+};
+
+changeColorUp('connectWindow', '#whatsNew');
+changeColorUp('whatsNew', '#connectWindow');
+changeColorUp('whatsNew', '#whatsNew');
+changeColorUp('connectWindow', '#connectWindow');
+
+
+// Bottone seconda scheda
+const toggleColorButton = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('bg-[#262130]');
+    menu.classList.toggle('bg-colorsSecondary');
+};
+
+const changeColorButton = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleColorButton(menuId));
+};
+
+changeColorButton('buttonRightConnect', '#buttonLeftConnect');
+changeColorButton('buttonLeftConnect', '#buttonRightConnect');
+changeColorButton('buttonLeftConnect', '#buttonLeftConnect');
+changeColorButton('buttonRightConnect', '#buttonRightConnect');
+
+
+// Switch schede connect
+const changeWindowConnect = document.getElementById("changeWindowConnect");
+const buttonLeftConnect = document.getElementById("buttonLeftConnect");
+const buttonRightConnect = document.getElementById("buttonRightConnect");
+
+buttonLeftConnect.addEventListener("click", function () {
+    changeWindowConnect.scrollLeft -= 1000;
+});
+
+buttonRightConnect.addEventListener("click", function () {
+    changeWindowConnect.scrollLeft += 1000;
+});
+
+
+// Bottone connect wallet
+const openConnectWallet = (id) => {
+    const menu = document.querySelector(id);
+    if (menu.classList.contains('fade-in')) {
+        menu.classList.remove('fade-in');
+        menu.classList.add('fade-out');
+        menu.classList.add('pointer-events-none');
+        menu.classList.remove('pointer-events-auto');
+    } else if (menu.classList.contains('fade-out')) {
+        menu.classList.remove('fade-out');
+        menu.classList.add('pointer-events-auto');
+    } else {
+        menu.classList.add('fade-in');
+        menu.classList.remove('pointer-events-none');
+        menu.classList.add('pointer-events-auto');
+    }
+};
+
+const addRemoveConnectWallet = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => openConnectWallet(menuId));
+};
+
+addRemoveConnectWallet('connectWalletButton', '#windowConnectWallet');
+addRemoveConnectWallet('connectWalletButton2', '#windowConnectWallet');
+addRemoveConnectWallet('connectWalletButton3', '#windowConnectWallet');
+addRemoveConnectWallet('whiteConnectWallet', '#windowConnectWallet');
