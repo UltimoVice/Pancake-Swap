@@ -53,6 +53,7 @@ leftNavItems.forEach(item => {
 const toggleBgMenu = (id) => {
     const menu = document.querySelector(id);
     menu.classList.toggle('bg-[#353547]'); 
+    menu.classList.toggle('dark:bg-[#EFF4F5]'); 
 };
 
 // Array di ID dei menu e funzioni associate
