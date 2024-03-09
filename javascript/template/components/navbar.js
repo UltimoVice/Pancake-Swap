@@ -27,6 +27,7 @@ const toggleMenuChangeColor = (id) => {
     const menu = document.querySelector(id);
     menu.classList.toggle('bg-[#353547]');
     menu.classList.toggle('rounded-2xl');
+    menu.classList.toggle('dark:bg-[#EFF4F5]');
 };
 
 const showBgNav = (id) => toggleMenuChangeColor(id);
@@ -117,8 +118,6 @@ addLanguageHoverListeners('languageSVG2', '#languageButton2');
 // Cambia colore bottoni lingue
 const colorLanguage = (id) => {
     const menu = document.querySelector(id);
-    menu.classList.toggle('text-[#A9A5B2]'); 
-    menu.classList.toggle('text-colorWhite'); 
     menu.classList.toggle('pointer-events-auto');
     menu.classList.toggle('cursor-pointer');
 };
@@ -236,23 +235,6 @@ const addNotificationClick = (elementId, menuId) => {
 addNotificationClick('toggleNotification', '#windowNotification');
 
 
-// Cambio colore Change Crypto
-const toggleCrypto = (id) => {
-    const menu = document.querySelector(id);
-    menu.classList.toggle('text-[#ACA8B5]');
-    menu.classList.toggle('text-colorWhite');
-};
-
-const addCryptoHover = (elementId, menuId) => {
-    const element = document.getElementById(elementId);
-    element.addEventListener('mouseover', () => toggleCrypto(menuId));
-    element.addEventListener('mouseout', () => toggleCrypto(menuId));
-};
-
-addCryptoHover('cryptoSel', '#topCrypto');
-addCryptoHover('cryptoSel', '#svgCrypto');
-addCryptoHover('cryptoSel', '#imgCrypto');
-
 
 // Spostamento Featured News 
 const featuredNews = document.getElementById("featuredNews");
@@ -332,6 +314,7 @@ const toggleAqua = (id) => {
     const menu = document.querySelector(id);
     menu.classList.toggle('bg-[#372f47]');
     menu.classList.toggle('bg-[#31d0aa]');
+    menu.classList.toggle('dark:bg-[#eeeaf4]');
 };
 
 const changeBgAqua = (elementId, menuId) => {
@@ -397,6 +380,10 @@ const toggleColorUp = (id) => {
     menu.classList.toggle('text-textViolet');
     menu.classList.toggle('bg-[#372f47]');
     menu.classList.toggle('bg-textViolet');
+    menu.classList.toggle('dark:text-[#7a6eaa]');
+    menu.classList.toggle('dark:bg-[#eeeaf4]');
+    menu.classList.toggle('dark:text-[#eeeaf4]');
+    menu.classList.toggle('dark:bg-[#7a6eaa]');
 };
 
 const changeColorUp = (elementId, menuId) => {
@@ -415,6 +402,8 @@ const toggleColorButton = (id) => {
     const menu = document.querySelector(id);
     menu.classList.toggle('bg-[#262130]');
     menu.classList.toggle('bg-colorsSecondary');
+    menu.classList.toggle('dark:bg-[#7645d9]');
+    menu.classList.toggle('dark:bg-[#d7caec]');
 };
 
 const changeColorButton = (elementId, menuId) => {
@@ -469,3 +458,19 @@ addRemoveConnectWallet('connectWalletButton', '#windowConnectWallet');
 addRemoveConnectWallet('connectWalletButton2', '#windowConnectWallet');
 addRemoveConnectWallet('connectWalletButton3', '#windowConnectWallet');
 addRemoveConnectWallet('whiteConnectWallet', '#windowConnectWallet');
+
+
+// Attiva/Disattiva Dark Mode
+const toggleDarkMode = (id) => {
+    const menu = document.querySelector(id);
+    menu.classList.toggle('dark');
+};
+
+const changeDarkMode = (elementId, menuId) => {
+    const element = document.getElementById(elementId);
+    element.addEventListener('click', () => toggleDarkMode(menuId));
+};
+
+changeDarkMode('contDarkMode', '#html');
+
+changeDarkMode('contDarkMode2', '#html');
