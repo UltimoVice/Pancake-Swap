@@ -480,28 +480,36 @@ changeDarkMode('contDarkMode2', '#html');
 const banners = {
     banner1: { //balena
         commDiv_innerHTML: `
-        <div class="slide h-[192px] w-[1128px]  bg-gradient-to-tl from-[#c6a3ff] to-[#9aedff] rounded-[32px] p-5 flex absolute ">
+        <div
+            class="slide h-[192px] w-[1128px]  bg-gradient-to-tl from-[#c6a3ff] to-[#9aedff] rounded-[32px] p-5 flex absolute ">
             <div>
                 <img alt="pancakeSwapLogo"
-                    src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
-                    decoding="async" data-nimg="intrinsic"
-                    class="h-[25px] fill-white block inset-0 top-1" />
-                <div class="h-[232px] text-[28px] text-[#7645d9] font-semibold"
-                        style="text-shadow: 2px 2px 0 white, -2px -2px 0 white;;">
-                        <span>Be Our Top 100 Traders and Earn a 3%</span><br>
-                        <span>Trading Fee Rebate!</span>
-                 </div>
+                    src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png" decoding="async"
+                    data-nimg="intrinsic" class="h-[25px] fill-white block inset-0 top-1" />
+                <div class="h-fit text-[28px] text-[#7645d9] font-semibold"
+                    style="text-shadow: 2px 2px 0 white, -2px -2px 0 white;;">
+                    <span>Be Our Top 100 Traders and Earn a 3%</span><br>
+                    <span>Trading Fee Rebate!</span>
+                </div>
+                <div class="flex mt-2">
+                    <div class=" z-10  text-[#7645d9]  tracking-[0.03em] shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer text-base font-semibold bg-transparent border-none  rounded-2xl h-12 px-6 fill-current relative flex items-center justify-start ">
+                        Join Now!
+                        <svg viewBox="0 0 24 24" color="#7645D9" ml="4px" width="20px"
+                            xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ dBBtLS">
+                            <path
+                                d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="bottom-[120px] left-[150px] relative">
                 <img src="https://assets.pancakeswap.finance/web/banners/top-traders/floating-item.png"
-                        class="lg:visible animate-bounce-slow h-[64px] right-[10px] top-[70px] relative"
-                                alt="">
-                            <img src="https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png"
-                                class="h-[224px] right-[370px] top-[30px]">
-                        </div>
-                        <!-- query -->
-                        <!-- <img src="https://assets.pancakeswap.finance/web/banners/top-traders/bg-mobile.png" class=" sm:visible h-[224px] absolute right-[500px] top-[30px]"> -->
-                    </div>
+                    class="lg:visible animate-bounce-slow h-[64px] right-[10px] top-[70px] relative" alt="">
+                <img src="https://assets.pancakeswap.finance/web/banners/top-traders/bg-desktop.png"
+                    class="h-[224px] right-[370px] top-[30px]">
+            </div>
+        </div>
         `,
     },
     banner2: {
@@ -525,6 +533,17 @@ const banners = {
                         </span> 
                         veCAKE
                     </div>
+                    <div class="flex mt-2">
+                        <button id="connectWalletBunny"
+                            class="mr-2 z-10  text-white hover:bg-[#228F8F] dark:text-[#faf9fa] tracking-[0.03em] shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer text-base font-semibold bg-colorsPrimary border-colorsPrimary border-solid border rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">
+                                Get started 
+                        </button>
+                        <a class="" href="">
+                            <button class="z-10 text-colorsPrimary text-base font-semibold border-colorsPrimary border-solid border mr-1 rounded-2xl h-12 px-6 bg-white flex items-center justify-center ">
+                                Learn More
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="bottom-[120px] left-[150px] relative">
@@ -534,42 +553,55 @@ const banners = {
                         class="h-[257px] left-[220px] bottom-[25px] relative">
             </div>
         </div>    
-    `,},
+    `,
+    },
     banner3: {
         commDiv_innerHTML: `
-        <div id=""
-                        class="slide h-[192px] w-[1128px] bg-gradient-to-tl from-[#313d5c] to-[#3d2a54] rounded-[32px] absolute">
-                        <div
-                            class="h-full w-full rounded-[32px] bg-[url('https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bg.6da793f3.png&w=1200&q=75')] p-5 flex ">
-                            <div>
-                                <img alt="pancakeSwapLogo"
-                                    src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
-                                    decoding="async" data-nimg="intrinsic"
-                                    class="h-[25px] fill-white block inset-0 top-1" />
-                                <div>
-                                    <span class="h-[32px] text-[28px] text-[#FFD737] font-semibold"
-                                        style="text-shadow: 2px 2px 0 #35FBA6, -2px -2px 0 #35FBA6;">PancakeSwap
-                                        Gaming
-                                        Marketplace</span><br>
-                                    <div class="text-[19px] flex items-center">
-                                        <span class="text-[#35FBA6] font-semibold">Explore Your </span>
-                                        <img alt="gameText"
-                                            src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-text.cc784fb7.png&amp;w=384&amp;q=75"
-                                            class="h-[19px]">
-                                        <span class="text-[#FDE038]">1.5 Monthly Players Await!</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bottom-[120px] left-[150px] relative">
-                                <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-cube.fb41a1ee.png&amp;w=128&amp;q=75"
-                                    class="lg:visible animate-bounce-slow h-[64px] right-[10px] top-[70px] relative"
-                                    alt="">
-                                <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bunny.79c23af5.png&w=384&q=75"
-                                    class="h-[192px]  top-[35px] relative">
-
+        <div class="slide h-[192px] w-[1128px] bg-gradient-to-tl from-[#313d5c] to-[#3d2a54] rounded-[32px] absolute">
+            <div class="h-full w-full rounded-[32px] bg-[url('https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bg.6da793f3.png&w=1200&q=75')] p-5 flex ">
+                <div>
+                    <img alt="pancakeSwapLogo"
+                        src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
+                        decoding="async" data-nimg="intrinsic"
+                        class="h-[25px] fill-white block inset-0 top-1" />
+                    <div>
+                        <span class="h-[32px] text-[28px] text-[#FFD737] font-semibold"
+                            style="text-shadow: 2px 2px 0 #35FBA6, -2px -2px 0 #35FBA6;">
+                            PancakeSwap Gaming Marketplace
+                        </span><br>
+                        <div class="text-[19px] flex items-center">
+                            <span class="text-[#35FBA6] font-semibold mr-1">
+                                Explore Your  
+                            </span>
+                            <img alt="gameText"
+                                 src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-text.cc784fb7.png&amp;w=384&amp;q=75"
+                                 class="h-[19px]">
+                            <span class="text-[#FDE038] ml-1">
+                                1.5 Monthly Players Await!
+                            </span>
+                        </div>
+                        <div class="flex mt-2">
+                            <div class=" z-10  text-[#35FBA6]  tracking-[0.03em] shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer text-base font-semibold bg-transparent border-none  rounded-2xl h-12 px-6 fill-current relative flex items-center justify-start ">
+                            Try Now!
+                                <svg viewBox="0 0 24 24" color="#35FBA6" ml="4px" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ dBBtLS">
+                                    <path
+                                    d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+                                    </path>
+                                </svg>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="bottom-[120px] left-[130px] relative">
+                    <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-cube.fb41a1ee.png&amp;w=128&amp;q=75"
+                                    class="lg:visible animate-bounce-slow h-[64px] right-[-10px] top-[70px] relative"
+                                    alt="">
+                    <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgame-desktop-bunny.79c23af5.png&w=384&q=75"
+                                    class="h-[192px]  top-[35px] right-[-150px] relative">
+                </div>
+            </div>
+        </div>
         `
     },
     banner4: {
@@ -589,6 +621,18 @@ const banners = {
                         Claim Your Exclusive NFTs Now!
                     </span>
                 </div>
+                <div class="flex mt-2">
+                <button id="connectWalletBunny"
+                    class="mr-2 z-10  text-white hover:bg-[#228F8F] dark:text-[#faf9fa] tracking-[0.03em] shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer text-base font-semibold bg-colorsPrimary border-colorsPrimary border-solid border rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">
+                        Get started 
+                        <svg viewBox="0 0 24 24" color="white" ml="4px" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ dBBtLS">
+                                    <path
+                                    d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+                                    </path>
+                        </svg>
+                </button>
+            </div>
             </div>
             <div class="bottom-[120px] left-[150px] relative">
                     <img src="https://pancakeswap.finance//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgalxe-traverse-bunny.6166be6f.png&w=640&q=75"
@@ -599,8 +643,7 @@ const banners = {
         `},
     banner5: {
         commDiv_innerHTML: `
-        <div id=""
-                        class="slide h-[192px] w-[1128px] bg-gradient-to-t from-[#472A7E] to-[#7344D3] rounded-[32px] p-5 flex absolute ">
+        <div class="slide h-[192px] w-[1128px] bg-gradient-to-t from-[#472A7E] to-[#7344D3] rounded-[32px] p-5 flex absolute ">
                         <div>
                             <img alt="pancakeSwapLogo"
                                 src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
@@ -613,6 +656,10 @@ const banners = {
                                 <span class="text-[40px] text-white font-semibold">
                                     UP TO 1001x LEVERAGE
                                 </span>
+                                <button class="mr-2 z-10  text-[#472A7E] hover:bg-[#228F8F] dark:text-[#faf9fa] tracking-[0.03em] shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer text-base font-semibold bg-colorsPrimary border-colorsPrimary border-solid border rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">
+                        Get started 
+                        <svg viewBox="0 0 24 24" color="invertedContrast" width="20px" xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ hxxPRP"><path d="M5 13H16.17L11.29 17.88C10.9 18.27 10.9 18.91 11.29 19.3C11.68 19.69 12.31 19.69 12.7 19.3L19.29 12.71C19.68 12.32 19.68 11.69 19.29 11.3L12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7C10.91 5.09 10.91 5.72 11.3 6.11L16.17 11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13Z"></path></svg>
+                </button>
                             </div>
                         </div>
                         <div class="bottom-[120px] left-[150px] relative">
@@ -642,6 +689,16 @@ const banners = {
                     Nemesis Downfall Now Live on <br>
                     PancakeSwap Gaming Marketplace
             </span><br>
+            <button id="connectWalletBunny"
+                    class="mr-2 z-10  text-white hover:bg-[#8f2e23bb] dark:text-[#faf9fa] tracking-[0.03em] shadow-[0px_-1px_0px_0px_inset_rgba(14, 14, 44, 0.4)] cursor-pointer text-base font-semibold bg-[#8F2E23] rounded-2xl h-12 px-6 fill-current relative flex items-center justify-center ">
+                        Play Now 
+                        <svg viewBox="0 0 24 24" color="white" ml="4px" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg" class="sc-grXZZQ dBBtLS">
+                                    <path
+                                    d="M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z">
+                                    </path>
+                        </svg>
+                </button>
             </div>
         </div>
         <div class="bottom-[120px] left-[150px] relative">
@@ -682,7 +739,7 @@ const changeBanner = () => {
     const bannerKeys = Object.keys(banners);
     const nextIndex = (currentBannerIndex + 1) % bannerKeys.length;
     const nextKey = bannerKeys(nextIndex)
-    const nextButton =document.querySelector(`[data-key="${nextKey}"]`);
+    const nextButton = document.querySelector(`[data-key="${nextKey}"]`);
     nextButton.click()
     currentBannerIndex = nextIndex;
 }
