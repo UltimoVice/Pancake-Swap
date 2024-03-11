@@ -52,8 +52,8 @@ leftNavItems.forEach(item => {
 // Mostra cambio colore Menù
 const toggleBgMenu = (id) => {
     const menu = document.querySelector(id);
-    menu.classList.toggle('bg-[#353547]'); 
-    menu.classList.toggle('dark:bg-[#EFF4F5]'); 
+    menu.classList.toggle('bg-[#353547]');
+    menu.classList.toggle('dark:bg-[#EFF4F5]');
 };
 
 // Array di ID dei menu e funzioni associate
@@ -98,9 +98,9 @@ menuItems.forEach(item => {
 // Mostra Menù lingue
 const toggleLanguage = (id) => {
     menu = document.querySelector(id);
-    menu.classList.toggle('opacity-0'); 
-    menu.classList.toggle('opacity-100'); 
-    menu.classList.toggle('pointer-events-none'); 
+    menu.classList.toggle('opacity-0');
+    menu.classList.toggle('opacity-100');
+    menu.classList.toggle('pointer-events-none');
     menu.classList.toggle('pointer-events-auto');
     menu.classList.toggle('overflow-hidden');
     menu.classList.toggle('overflow-y-auto');
@@ -476,9 +476,9 @@ changeDarkMode('contDarkMode', '#html');
 
 changeDarkMode('contDarkMode2', '#html');
 
-// banner
+// CONTENUTI BANNERS
 const banners = {
-    banner1: {
+    banner1: { //balena
         commDiv_innerHTML: `
         <div class="slide h-[192px] w-[1128px]  bg-gradient-to-tl from-[#c6a3ff] to-[#9aedff] rounded-[32px] p-5 flex absolute ">
             <div>
@@ -511,25 +511,30 @@ const banners = {
                 <img alt="pancakeSwapLogo" src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
                     decoding="async" data-nimg="intrinsic"
                     class="h-[25px] fill-white block inset-0 top-1" />
-                            <div class="h-[232px] font-semibold">
-                                <div class="text-[#ffb237] text-[28px]"
-                                    style="text-shadow: 2px 2px 0 #7645d9, -2px -2px 0 #7645d9;">Your CAKE, Your
-                                    Voice </div>
-                                <div class="text-[#280d5f] text-[24px]"> <span
-                                        class="text-[#7645d9]">Introducing</span> Gauges
-                                    Voting <span class="text-[#7645d9]">and</span> veCAKE</div>
-                            </div>
-                        </div>
-                        <div class="bottom-[120px] left-[150px] relative">
-                            <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-ruby.8d684b20.png&w=256&q=75"
-                                class="lg:visible animate-bounce-slow h-[64px] right-[10px] top-[70px] relative">
-                            <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-desktop-bunny.625811b4.png&w=256&q=75"
-                                class="h-[257px] left-[220px] bottom-[25px] relative">
-                            <!-- <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-bg.e2e958a5.png&w=1200&q=75 " alt=""> -->
-                            <!-- bg-gradient-to-tl from-[#9b6cda] to-[#9a9fd0] -->
-                        </div>
-                    </div>    `,
-    },
+                <div class="h-[232px] font-semibold">
+                    <div class="text-[#ffb237] text-[28px]" style="text-shadow: 2px 2px 0 #7645d9, -2px -2px 0 #7645d9;">
+                        Your CAKE, Your Voice 
+                    </div>
+                    <div class="text-[#280d5f] text-[24px]"> 
+                        <span class="text-[#7645d9]">
+                            Introducing
+                        </span> 
+                        Gauges Voting 
+                        <span class="text-[#7645d9]">
+                            and 
+                        </span> 
+                        veCAKE
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-[120px] left-[150px] relative">
+                <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-ruby.8d684b20.png&w=256&q=75"
+                        class="lg:visible animate-bounce-slow h-[64px] right-[10px] top-[70px] relative">
+                <img src="https://pancakeswap.finance/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvecake-desktop-bunny.625811b4.png&w=256&q=75"
+                        class="h-[257px] left-[220px] bottom-[25px] relative">
+            </div>
+        </div>    
+    `,},
     banner3: {
         commDiv_innerHTML: `
         <div id=""
@@ -569,32 +574,29 @@ const banners = {
     },
     banner4: {
         commDiv_innerHTML: `
-        <div id=""
-                        class="slide h-[192px] w-[1128px] bg-cover bg-[url('https://pancakeswap.finance/_next/static/media/galxe-traverse-bg.fcab2d26.png')] rounded-[32px] p-5 flex absolute">
-                        <div>
-                            <img alt="pancakeSwapLogo"
-                                src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
-                                decoding="async" data-nimg="intrinsic"
-                                class="h-[25px] fill-white block inset-0 top-1" />
-                            <div>
-                                <span class="h-[32px] text-[32px] text-[#FFC836] font-semibold"
-                                    style="text-shadow: 2px 2px 0 #822E00, -2px -2px 0 #822E00;">
-                                    Traverse the Treasure Island on Galxe
-                                </span><br>
-                                <span class="text-[24px] text-[#270E5F] font-semibold">
-                                    Claim Your Exclusive NFTs Now!
-                                </span>
-
-                            </div>
-                        </div>
-                        <div class="bottom-[120px] left-[150px] relative">
-                            <img src="https://pancakeswap.finance//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgalxe-traverse-bunny.6166be6f.png&w=640&q=75"
-                                class="lg:visible animate-bounce-slow h-[170px] right-[10px] top-[70px] z-10 relative"
-                                style="--animate-duration: 5s;" alt="">
-                        </div>
-                    </div>
-        `
-    },
+        <div class="slide h-[192px] w-[1128px] bg-cover bg-[url('https://pancakeswap.finance/_next/static/media/galxe-traverse-bg.fcab2d26.png')] rounded-[32px] p-5 flex absolute">
+            <div>
+                <img alt="pancakeSwapLogo"
+                    src="https://pancakeswap.finance/_next/static/media/vecake-title.de07d9b9.png"
+                    decoding="async" data-nimg="intrinsic"
+                    class="h-[25px] fill-white block inset-0 top-1" />
+                <div>
+                    <span class="h-[32px] text-[32px] text-[#FFC836] font-semibold"
+                        style="text-shadow: 2px 2px 0 #822E00, -2px -2px 0 #822E00;">
+                          Traverse the Treasure Island on Galxe
+                    </span><br>
+                    <span class="text-[24px] text-[#270E5F] font-semibold">
+                        Claim Your Exclusive NFTs Now!
+                    </span>
+                </div>
+            </div>
+            <div class="bottom-[120px] left-[150px] relative">
+                    <img src="https://pancakeswap.finance//_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgalxe-traverse-bunny.6166be6f.png&w=640&q=75"
+                        class="lg:visible animate-bounce-slow h-[170px] right-[10px] top-[70px] z-10 relative"
+                        style="--animate-duration: 5s;" alt="">
+            </div>
+        </div>
+        `},
     banner5: {
         commDiv_innerHTML: `
         <div id=""
@@ -652,16 +654,41 @@ const banners = {
     `},
 };
 
+// colore dello slide
+const toggleColorButtonBan = (button) => {
+    document.querySelectorAll(".buttonBanner").forEach(btn => {
+        if (btn !== button) {
+            btn.classList.remove('bg-white');
+        }
+    });
+    button.classList.toggle('bg-white');
+};
+
+// BANNER AL CLICK
 document.querySelectorAll(".buttonBanner").forEach(btn => {
     btn.addEventListener("click", (event) => {
         const cardKey = event.target.dataset.key;
         const banner = banners[cardKey];
-
         const content = document.getElementById('contentBanner');
         content.innerHTML = banner.commDiv_innerHTML;
+        const button = document.querySelector(`[data-key="${cardKey}"]`);
+        toggleColorButtonBan(button)
     })
 });
 
+// visualizzazione nel tempo
+let currentBannerIndex = 0;
+const changeBanner = () => {
+    const bannerKeys = Object.keys(banners);
+    const nextIndex = (currentBannerIndex + 1) % bannerKeys.length;
+    const nextKey = bannerKeys(nextIndex)
+    const nextButton =document.querySelector(`[data-key="${nextKey}"]`);
+    nextButton.click()
+    currentBannerIndex = nextIndex;
+}
+setInterval(changeBanner, 7000)
+
+// BANNER IN DEFAULT
 const defaultKeyBanner = 'banner2';
 const defaultButtonBanner = document.querySelector(`[data-key="${defaultKeyBanner}"]`);
 if (defaultButtonBanner) {
@@ -742,28 +769,46 @@ const communitySlides = {
     },
     community2: {
         commDiv_innerHTML: `
-        <div class="w-[290px] h-[290px] text-[14px] text-[#f4eeff] dark:text-[#280d5f]">
-    <div class="text-[16px] mb-6">Top Tweet of the week</div>
-    <img class="w-[290px] h-[140px] rounded-2xl" src="https://sgp1.digitaloceanspaces.com/strapi.space/07697db1c49bbd5983866a24391f0936.jpg" alt="">
-    <div class="text-[#b8add2]">
-        2024-03-08
-    </div>
+    <div class="w-[290px] h-[290px] text-[14px] text-[#f4eeff] dark:text-[#280d5f]">
+        <div class="text-[16px] mb-6">
+            Top Tweet of the week
+        </div>
+        <img class="w-[290px] h-[140px] rounded-2xl" src="https://sgp1.digitaloceanspaces.com/strapi.space/07697db1c49bbd5983866a24391f0936.jpg" alt="">
+        <div class="text-[#b8add2]">
+            2024-03-08
+        </div>
     <div class="mt-[10px]"> February 2024: PancakeSwap's CAKE Burn</div>
         `,
     },
 };
 
+// colore dello slide 
+const toggleColorButtonCom = (button) => {
+    document.querySelectorAll(".buttonSlider").forEach(btn => {
+        if (btn !== button) {
+            btn.classList.remove('bg-[#7645d9]');
+        }
+    });
+    button.classList.toggle('bg-[#7645d9]');
+};
+
+// al click cambia contenuto community
 document.querySelectorAll(".buttonSlider").forEach(btn => {
     btn.addEventListener("click", (event) => {
         const cardKey = event.target.dataset.key;
         const obSlider = communitySlides[cardKey];
-
+        const button = document.querySelector(`[data-key="${cardKey}"]`);
+        toggleColorButtonCom(button)
         const content = document.getElementById('contentCommunity');
         content.innerHTML = obSlider.commDiv_innerHTML;
+
     })
 });
+
+// inizio in default
 const defaultKey = 'community2';
 const defaultButton = document.querySelector(`[data-key="${defaultKey}"]`);
 if (defaultButton) {
     defaultButton.click();
 }
+
